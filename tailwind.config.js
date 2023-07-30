@@ -6,6 +6,16 @@ module.exports = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    screens: {
+      'sm': '640px',
+      // => @media (min-width: 640px) { ... }
+
+      'md': '768px',
+      // => @media (min-width: 768px) { ... }
+
+      'lg': '1024px',
+      // => @media (min-width: 1024px) { ... }
+    },
     extend: {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
@@ -14,5 +24,8 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/forms')
+       ,
+  ],
 }
