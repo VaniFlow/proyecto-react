@@ -4,7 +4,7 @@ import Media from "@/components/atoms/Media"
 const Footer = () => {
   return (
     <>
-  <footer class="relative bg-orange-100 pt-8 pb-6">
+  <footer class="relative bg-red-100 pt-8 pb-6">
     <div class="container mx-auto px-4">
       <div class="flex flex-wrap justify-between items-center">
         <h4 class="text-2xl fonat-semibold text-blueGray-700 uppercase sm:w-12/12 lg:w-6/12 sm:pl-32 md:pl-48 lg:pl-20">Recibí todas las novedades</h4>
