@@ -1,7 +1,30 @@
 import React from "react";
 import Media from "../atoms/Media";
+import Swal from 'sweetalert2'
+import { useState } from "react";
 
-const Lalala = () => {
+const initialForm = {
+  email: ""
+}
+const Footer = () => {
+
+const [form, setForm] = useState (initialForm)
+
+  const handleChange = (e) => setForm ({
+    email: e.target.value
+  })
+
+  const handleSubmit = (e) => {
+    e.preventDefault ()
+
+    if (form.email === "") {
+     Swal.fire ({
+      confirmButtonColor: "#FB9B9B",
+      text: 'Debe ingresar un correo electrónico'
+     })
+    }
+  }
+
   return (
     <footer class="bg-gradient-to-r from-red-400 to-red-200 dark:bg-gray-900 lg:grid lg:grid-cols-5">
       <div class="relative block h-96 lg:col-span-2 lg:h-full">
@@ -104,20 +127,15 @@ const Lalala = () => {
               <h4 class="text-md fonat-semibold text-blueGray-700 uppercase mt-6 sm:w-12/12 lg:my-auto lg:mb-1">
                 Recibí todas las novedades
               </h4>
-              <form class="relative mt-2 rounded-md shadow-sm sm:w-9/12 sm:ml-0 lg:my-auto inset-y-0 right-0">
-                <div class="flex items-center py-2 rounded-lg bg-red-200 px-2">
+              <form onSubmit = {handleSubmit} class="relative mt-2 rounded-md shadow-sm sm:w-9/12 sm:ml-0 lg:my-auto inset-y-0 right-0">
+                <div class="flex items-center h-12 py-2 rounded-lg bg-red-200 px-2">
                   <input
-                    class="appearance-none bg-white border-none rounded-lg w-full text-gray-700 mr-6 py-1 px-2 leading-tight ring ring-red-300 hover:ring-slate-300"
-                    type="text"
-                    placeholder="Tu e-mail"
-                    aria-label="Full mail"
-                  ></input>
-                  <button
-                    class="flex-shrink-0 bg-red-300 hover:bg-red-300 border-red-300 hover:border-red-300 shadow-lg shadow-red-400/50 text-sm border-2 text-white italic hover:not-italic py-1 px-2 rounded-lg"
-                    type="button"
-                  >
-                    Suscribirme
-                  </button>
+                    class="appearance-none bg-white border-none rounded-lg w-full h-7 text-gray-700 mr-6 py-1 px-2 leading-tight ring ring-red-300 hover:ring-slate-300"
+                    type="email" name= "email"
+                    placeholder="Tu e-mail" onChange={handleChange} value={form.email}/>
+                  <input 
+                    class="bg-red-300 hover:bg-red-300 border-red-300 hover:border-red-300 shadow-lg shadow-red-400/50 text-sm border-2 text-white italic hover:not-italic h-7 py-1 px-2 rounded-lg"
+                    type="submit" value="Suscribirme"/>
                 </div>
               </form>
             </div>
@@ -136,4 +154,4 @@ const Lalala = () => {
   );
 };
 
-export default Lalala;
+export default Footer;
