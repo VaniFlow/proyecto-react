@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 import styled from "styled-components";
 
 import React from "react";
@@ -28,16 +29,16 @@ const Cards = (props) => {
                 <Textoh4>Comodidades</Textoh4>
                 <Uls>
                   <Lis>
-                    <i class="fa-solid fa-hotel"></i>
+                    <i className="fa-solid fa-hotel"></i>
                   </Lis>
                   <Lis>
-                    <i class="fa-solid fa-plane"></i>
+                    <i className="fa-solid fa-plane"></i>
                   </Lis>
                   <Lis>
-                    <i class="fa-sharp fa-solid fa-car"></i>
+                    <i className="fa-sharp fa-solid fa-car"></i>
                   </Lis>
                   <Lis>
-                    <i class="fa-solid fa-ship"></i>
+                    <i className="fa-solid fa-ship"></i>
                   </Lis>
                 </Uls>
                 <Boton>
@@ -157,22 +158,16 @@ display: flex;
 flex-direction: row;
 align-items: center;
 justify-content: space-between;
-margin-top: 12px; 
-
-
-`;
-
-
+margin-top: 12px; `;
 
 const TextoA = styled.a`
-font-size: 1em;
+    font-size: 1em;
     text-decoration: none;
     padding: 8px;
     color:#ffffff;
-    border-radius: 8px;
+    border-radius: px;
     background:rgb(251, 149, 149);
-    transition: all .3s;
-`;
+    transition: all .3s;`;
 
 const Textopboton = styled.a`
 

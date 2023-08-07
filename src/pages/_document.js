@@ -5,7 +5,7 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head />
-      <script src="https://kit.fontawesome.com/fc289218ec.js" crossorigin="anonymous"></script>   
+      <script ></script>   
       <body>
         <Main />
         <NextScript />
