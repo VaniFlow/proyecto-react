@@ -1,7 +1,30 @@
 import React from "react";
 import Media from "../atoms/Media";
+import Swal from 'sweetalert2'
+import { useState } from "react";
 
-const Lalala = () => {
+const initialForm = {
+  email: ""
+}
+const Footer = () => {
+
+const [form, setForm] = useState (initialForm)
+
+  const handleChange = (e) => setForm ({
+    email: e.target.value
+  })
+
+  const handleSubmit = (e) => {
+    e.preventDefault ()
+
+    if (form.email === "") {
+     Swal.fire ({
+      confirmButtonColor: "#FB9B9B",
+      text: 'Debe ingresar un correo electrónico'
+     })
+    }
+  }
+
   return (
     (<footer className="bg-gradient-to-r from-red-400 to-red-200 dark:bg-gray-900 lg:grid lg:grid-cols-5">
       <div className="relative block h-96 lg:col-span-2 lg:h-full">
@@ -103,6 +126,7 @@ const Lalala = () => {
               <h4 className="text-md fonat-semibold text-blueGray-700 uppercase mt-6 sm:w-12/12 lg:my-auto lg:mb-1">
                 Recibí todas las novedades
               </h4>
+
               <form className="relative mt-2 rounded-md shadow-sm sm:w-9/12 sm:ml-0 lg:my-auto inset-y-0 right-0">
                 <div className="flex items-center py-2 rounded-lg bg-red-200 px-2">
                   <input
@@ -117,6 +141,7 @@ const Lalala = () => {
                   >
                     Suscribirme
                   </button>
+
                 </div>
               </form>
             </div>
@@ -135,4 +160,4 @@ const Lalala = () => {
   );
 };
 
-export default Lalala;
+export default Footer;
