@@ -4,23 +4,22 @@ import Media from "../atoms/Media";
 import { useState } from "react";
 
 const initialForm = {
-  email: ""
-}
+  email: "",
+};
 const Footer = () => {
+  const [form, setForm] = useState(initialForm);
 
-const [form, setForm] = useState (initialForm)
-
-  const handleChange = (e) => setForm ({
-    email: e.target.value
-  })
+  const handleChange = (e) =>
+    setForm({
+      email: e.target.value,
+    });
 
   const handleSubmit = (e) => {
-    e.preventDefault ()
-
-  }
+    e.preventDefault();
+  };
 
   return (
-    (<footer className="bg-gradient-to-r from-red-400 to-red-200 dark:bg-gray-900 lg:grid lg:grid-cols-5">
+    <footer className="bg-gradient-to-r from-red-400 to-red-200 dark:bg-gray-900 lg:grid lg:grid-cols-5">
       <div className="relative block h-96 lg:col-span-2 lg:h-full">
         <img
           className="absolute bg-cover inset-0 h-full w-full object-cover"
@@ -39,7 +38,7 @@ const [form, setForm] = useState (initialForm)
                 href="#"
                 className="block font-medium text-gray-900 hover:opacity-75 dark:text-white sm:text-xl"
               >
-               +54 11-12345678
+                +54 11-12345678
               </a>
             </p>
 
@@ -47,67 +46,54 @@ const [form, setForm] = useState (initialForm)
               <li>De lunes a viernes: 10am - 5pm</li>
               <li>E-mail: goldsandstravel@gmail.com</li>
             </ul>
-            <Media/>
+            <Media />
           </div>
 
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             <div>
-              <p className="font-medium text-gray-900 dark:text-white">Servicios</p>
+              <p className="font-medium text-gray-900 dark:text-white">
+                Servicios
+              </p>
 
               <ul className="mt-6 space-y-4 text-sm cursor-pointer">
-                <li
-                    className="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
-                  >
-                    Reservas
-
+                <li className="text-gray-700 transition hover:opacity-75 dark:text-gray-200">
+                  Reservas
                 </li>
 
-                <li
-                    className="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
-                  >
-                    Viajes a medida
+                <li className="text-gray-700 transition hover:opacity-75 dark:text-gray-200">
+                  Viajes a medida
                 </li>
 
-                <li
-                    className="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
-                  >
-                    Asistencia al viajero
+                <li className="text-gray-700 transition hover:opacity-75 dark:text-gray-200">
+                  Asistencia al viajero
                 </li>
 
-                <li
-                    className="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
-                  >
-                    Excursiones
+                <li className="text-gray-700 transition hover:opacity-75 dark:text-gray-200">
+                  Excursiones
                 </li>
 
-                <li
-                    className="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
-                  >
-                    Transfers
+                <li className="text-gray-700 transition hover:opacity-75 dark:text-gray-200">
+                  Transfers
                 </li>
               </ul>
             </div>
 
             <div>
-              <p className="font-medium text-gray-900 dark:text-white">Nuestra empresa</p>
+              <p className="font-medium text-gray-900 dark:text-white">
+                Nuestra empresa
+              </p>
 
               <ul className="mt-6 space-y-4 text-sm cursor-pointer">
-                <li
-                    className="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
-                  >
-                    Sobre nosotros
+                <li className="text-gray-700 transition hover:opacity-75 dark:text-gray-200">
+                  Sobre nosotros
                 </li>
 
-                <li
-                    className="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
-                  >
-                    Blog de viajes
+                <li className="text-gray-700 transition hover:opacity-75 dark:text-gray-200">
+                  Blog de viajes
                 </li>
 
-                <li
-                    className="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
-                  >
-                    Nuestro local
+                <li className="text-gray-700 transition hover:opacity-75 dark:text-gray-200">
+                  Nuestro local
                 </li>
               </ul>
             </div>
@@ -135,7 +121,6 @@ const [form, setForm] = useState (initialForm)
                   >
                     Suscribirme
                   </button>
-
                 </div>
               </form>
             </div>
@@ -145,12 +130,13 @@ const [form, setForm] = useState (initialForm)
         <div className="mt-12 h-12 border-t border-gray-100 pt-12 dark:border-gray-800">
           <div className="flex justify-center">
             <p className="text-sm text-gray-500 dark:text-gray-600 sm:mt-0">
-            Copyright © {new Date().getFullYear()} GOLD SANDS TRAVEL - TODOS LOS DERECHOS RESERVADOS.
+              Copyright © {new Date().getFullYear()} GOLD SANDS TRAVEL - TODOS
+              LOS DERECHOS RESERVADOS.
             </p>
           </div>
         </div>
       </div>
-    </footer>)
+    </footer>
   );
 };
 
