@@ -152,5 +152,5 @@ const CardContainer = styled.div`
   align-items: center;
   gap: 10px;
   width: 100%;
-  border: 1px solid b;
+  
 `;
