@@ -1,184 +1,61 @@
-/* eslint-disable jsx-a11y/alt-text */
-import styled from "styled-components";
 
-import React from "react";
 
-const Cards = (props) => {
+
+
+
+const Cards = ({card}) => {
   return (
     <>
-      
-       
-          <Card>
-            <Overlay>
-              <Image src={props.destino.imgfondo}/>
-            </Overlay>
+     <div className="relative w-80 h-[450px] rounded-[10px] overflow-hidden shadow-[0_15px_35px_rgba(0,0,0,0.25)] mb-[5px] text-left">
+  <div className="opacity-70">
+    <img
+      src={card.imgfondo}
+      className="w-full h-full object-cover absolute"
+      alt="Fondo"
+    />
+  </div>
 
-            <Details>
-              <Logo src={props.destino.imglogo} />
-              <Textoh3>{props.destino.titulo}</Textoh3>
-
-              <Tags>
-               
-              </Tags>
-              <Infocontainer>
-              <Info>
-                <p>{props.destino.textodescripcion}</p>
-              </Info>
-              </Infocontainer>
-              <Comodidades>
-                <Textoh4>Comodidades</Textoh4>
-                <Uls>
-                  <Lis>
-                    <i className="fa-solid fa-hotel"></i>
-                  </Lis>
-                  <Lis>
-                    <i className="fa-solid fa-plane"></i>
-                  </Lis>
-                  <Lis>
-                    <i className="fa-sharp fa-solid fa-car"></i>
-                  </Lis>
-                  <Lis>
-                    <i className="fa-solid fa-ship"></i>
-                  </Lis>
-                </Uls>
-                <Boton>
-                  <TextoA href="#">Agregar a carrito</TextoA>
-                  <Textopboton>${props.destino.precio}</Textopboton>
-                </Boton>
-              </Comodidades>
-            </Details>
-          </Card>
-        
-      
+  <div className="w-full z-[20] transition-[0.5s] p-5 left-0 -bottom-2.5">
+    <img
+      src={card.imglogo}
+      className="max-w-[100px] z-[300] relative"
+      alt="Logo"
+    />
+    <h3 className="text-[1.2em] font-bold text-white font-[bold] z-[321] relative opacity-100">
+      {card.titulo}
+    </h3>
+    <div className="relative">
+      <p className="text-white rounded ml-0 mr-[5px] my-0 p-[5px] font-bold">
+        {card.textodescripcion}
+      </p>
+    </div>
+    <div className="h-[80px] w-full relative z-[327]">
+      <h4 className="text-white mt-2.5 z-[329] text-[1.3em no-underline]">
+        Comodidades
+      </h4>
+      <ul className="relative flex gap-[5px] mt-2.5">
+        {/* Lista de íconos de comodidades */}
+      </ul>
+      <div className="absolute bottom-0 left-0 w-full flex items-center justify-between">
+        <a
+          href="#"
+          className="rounded-[10px] bg-customRed text-1em text-white text-decoration-none px-5 py-2 border-radius background-transition"
+        >
+          Agregar a carrito
+        </a>
+        <a
+          className="text-[1em] no-underline text-white transition-all duration-[0.3s] p-2"
+          href="#"
+        >
+          ${card.precio}
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
     </>
   );
 };
 
 export default Cards;
-
-
-
-
-const Card = styled.div`
-  position: relative;
-  width: 320px;
-  height: 450px;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
-  text-algin: left;
-  margin-bottom:5px;
-`;
-const Overlay = styled.div`
-  background-color: black;
-  width: 100%;
-  height: 100%;
-`;
-const Image = styled.img`
-   width: 100%;
-   height: 100%;
-    opacity: 0.6;
-    objet-fit: cover;
-`
-const Details = styled.div`
-  position: absolute;
-  bottom: -10px;
-  width: 100%;
-  z-index: 2;
-  left: 0;
-  padding: 20px;
-  transition: 0.5s;
-`;
-const Logo = styled.img`
-  max-width: 100px;
-  
-  
-`;
-
-const Textoh3 = styled.h3`
-  font-size: 1.2em;
-  color: #fff;
-  font-weight:bold;
-`;
-
-const Tags = styled.div`
-  position: relative;
-  margin-top: 15px;
-`;
-
-const Spans = styled.span`
-  padding: 5px 5px;
-  margin:0 5px 0 0;
-  color: white;
-  background: #5fa1aa;
-  border-radius: 4px;
-`;
-const Infocontainer = styled.div`
-    
-    height:150px;
-    width:100%;
-    
-    
-`;
-const Info = styled.div`
-    color:#fff;
-    text-align: left;
-    
-`;
-
-const Comodidades = styled.div`
- position: relative;
-`;
-const Textoh4 = styled.h4`
- color: #fff;
-margin-top: 10px;
-`;
-const Uls = styled.ul`
-position: relative;
-display: flex;
-margin-top: 10px;
-gap:5px;
-justify-content: start;
-`;
-
-const Lis = styled.li`
-list-style: none;
-width: 40px;
-font-size: 1.2em;
-color: #fff;
-font-weight: lighter;
-overflow: hidden;`
-;
-
-
-
-const Boton = styled.div`
-
-display: flex;
-flex-direction: row;
-align-items: center;
-justify-content: space-between;
-margin-top: 12px; `;
-
-const TextoA = styled.a`
-    font-size: 1em;
-    text-decoration: none;
-    padding: 8px;
-    color:#ffffff;
-    border-radius: px;
-    background:rgb(251, 149, 149);
-    transition: all .3s;`;
-
-const Textopboton = styled.a`
-
-font-size: 1.3em;
-color:#ffffff;
-text-decoration: none;  
-`;
-
-
-
-
-
-
 
