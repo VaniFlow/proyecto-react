@@ -82,7 +82,7 @@ const CardList = () => {
   };
 
   return (
-    <div className="py-20 px-2 bg-gradient-to-b from-blue-400 to-pink-400 font-sans">
+    <div className="py-20 px-2 bg-gradient-to-b from-[#01C4ED] to-red-300 font-sans">
       <div className="text-center mb-6">
         <h2 className="text-3xl font-semibold">Elige tu destino favorito</h2>
       </div>
