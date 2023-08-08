@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Vithkuqi&family=Roboto:ital,wght@0,400;0,700;1,900&display=swap');
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -16,7 +17,13 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
-
+@font-face {
+  font-family: "letra1";
+  src: url(../public/fonts/ComingSoon-Regular.ttf);
+}
+*{
+  font-family: "letra1" , sans-serif ;
+}
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -26,4 +33,33 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+.slick-track{
+  cursor: grabbing;
+  left: 3rem !important;
+}
+@media (max-width: 768px) {
+.slick-track{
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  height: 250px;
+}
+}
 
+@media (max-width: 552px) {
+  .slick-track{
+    left: 0 !important;
+  }
+}
+.slick-dots li.slick-active button:before{
+  color: white !important;
+}
+.slick-dots li.slick-active button:hover{
+  color: white !important;
+}
+
+.slick-dots:hover{
+  color: white !important;
+}
+.slick-dots li:hover{
+  color: white !important;
+}
