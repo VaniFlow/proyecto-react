@@ -1,16 +1,18 @@
-
 import { useEffect, useState } from "react";
+import Slider from "react-slick";
 import Cards from "./Cards";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const CardList = () => {
-
   const [data, setData] = useState([]);
-console.log(data);
+  const API = "http://localhost:5000/card" 
+  
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:5000/card");
-        if (response) {
+        const response = await fetch(API);
+        if (response.ok) {
           const jsonData = await response.json();
           setData(jsonData);
         } else {
@@ -20,23 +22,77 @@ console.log(data);
         console.error("error:", error);
       }
     };
-
     fetchData();
   }, []);
 
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 2,
+    arrows: false,
+    autoplay: true,
+    responsive: [
+      {
+        breakpoint: 1224,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 1030,
+        settings: {
+          slidesToShow: 2.5,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 700,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          centerMode: true,
+        },
+      },
+    
+      {
+        breakpoint: 468,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 550,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
+
   return (
-    <>
-      <div className="flex justify-center items-center flex-wrap min-h-screen bg-gradient-to-b from-blue-400 to-pink-400 font-sans">
+    <div className="py-20 px-2 bg-gradient-to-b from-blue-400 to-pink-400 font-sans">
+      <div className="text-center mb-6">
         <h2 className="text-3xl font-semibold">Elige tu destino favorito</h2>
-        <div className="flex flex-wrap justify-center items-center gap-10 w-full">
-          {data.map((card) => (
-            <Cards key={card.id} card={card} />
-          ))}
-        </div>
       </div>
-    </>
+      <Slider {...settings}>
+        {data.map((card) => (
+          <Cards key={card.id} card={card} />
+        ))}
+      </Slider>
+    </div>
   );
 };
-
 
 export default CardList;
