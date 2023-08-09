@@ -15,6 +15,7 @@
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
+    background-color:linear-gradient(90deg, #03c3ec 0%, #fbd5d5 42%);;
   }
 }
 @font-face {
@@ -23,6 +24,7 @@
 }
 *{
   font-family: "letra1" , sans-serif ;
+  scroll-behavior:smooth;
 }
 body {
   color: rgb(var(--foreground-rgb));
@@ -62,4 +64,22 @@ body {
 }
 .slick-dots li:hover{
   color: white !important;
+}
+
+section{
+  scroll-behavior:smooth
+}
+
+body::-webkit-scrollbar {
+  width: 12px;               
+}
+
+body::-webkit-scrollbar-track {
+  background: #FBD5D5;        
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #F99595;    
+  /* border-radius: 20px;       
+  /* border: 3px solid #03c3ec;  */
 }

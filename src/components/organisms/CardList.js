@@ -82,7 +82,8 @@ const CardList = () => {
   };
 
   return (
-    <div className="py-20 px-2 bg-gradient-to-b from-[#01C4ED] to-red-300 font-sans">
+    <section id="destinos">
+    <div className="py-20 px-2 bg-gradient-to-b from-[#03c3ec] to-red-200 font-sans">
       <div className="text-center mb-6">
         <h2 className="text-3xl font-semibold">Elige tu destino favorito</h2>
       </div>
@@ -92,6 +93,7 @@ const CardList = () => {
         ))}
       </Slider>
     </div>
+    </section>
   );
 };
 

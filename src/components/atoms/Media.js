@@ -9,7 +9,7 @@ const Media = () => {
             href="/"
             rel="noreferrer"
             target="_blank"
-            className="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
+            className="text-white transition hover:opacity-75 dark:text-gray-200"
           >
             <span className="sr-only">Facebook</span>
 
@@ -29,7 +29,7 @@ const Media = () => {
             href="/"
             rel="noreferrer"
             target="_blank"
-            className="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
+            className="text-white transition hover:opacity-75 dark:text-gray-200"
           >
             <span className="sr-only">Instagram</span>
 
@@ -49,7 +49,7 @@ const Media = () => {
             href="/"
             rel="noreferrer"
             target="_blank"
-            className="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
+            className="text-white transition hover:opacity-75 dark:text-gray-200"
           >
             <span className="sr-only">Twitter</span>
 
