@@ -7,7 +7,7 @@ const Cards = ({card}) => {
   return (
     <>
      <div className="relative w-80 h-[450px] rounded-[10px] overflow-hidden  mb-[5px] text-left">
-  <div className="opacity-70">
+  <div className="opacity-80">
     <img
       src={card.imgfondo}
       className="w-full h-full object-cover absolute"

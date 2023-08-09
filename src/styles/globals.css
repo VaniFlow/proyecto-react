@@ -24,8 +24,12 @@
 }
 *{
   font-family: "letra1" , sans-serif ;
+
   scroll-behavior:smooth;
+
+  overflow-x:"hidden"
 }
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -66,6 +70,7 @@ body {
   color: white !important;
 }
 
+
 section{
   scroll-behavior:smooth
 }
@@ -82,4 +87,7 @@ body::-webkit-scrollbar-thumb {
   background-color: #F99595;    
   /* border-radius: 20px;       
   /* border: 3px solid #03c3ec;  */
+
+
+
 }
