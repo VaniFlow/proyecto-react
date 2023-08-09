@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react";
 import Slider from "react-slick";
 import Cards from "./Cards";
+
+
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const CardList = () => {
   const [data, setData] = useState([]);
-  const API = "http://localhost:5000/card" 
-  
+  const API = "http://localhost:5000/card";
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -80,9 +82,9 @@ const CardList = () => {
       },
     ],
   };
-
-  return (
-    <div className="py-20 px-2 bg-gradient-to-b to-[#EBB496] from-[#966D5E] font-sans">
+ return (
+<section id="destinos">
+    <div className="py-20 px-2 bg-gradient-to-b from-[#03c3ec] to-red-200 font-sans">
       <div className="text-center mb-6">
         <h2 className="text-3xl font-semibold">Elige tu destino favorito</h2>
       </div>
@@ -92,7 +94,8 @@ const CardList = () => {
         ))}
       </Slider>
     </div>
-  );
-};
+    </section>
+ )
 
+}
 export default CardList;
