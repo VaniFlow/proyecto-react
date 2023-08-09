@@ -15,6 +15,7 @@
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
+    background-color:linear-gradient(90deg, #03c3ec 0%, #fbd5d5 42%);;
   }
 }
 @font-face {
@@ -23,11 +24,12 @@
 }
 *{
   font-family: "letra1" , sans-serif ;
+
+  scroll-behavior:smooth;
+
   overflow-x:"hidden"
 }
-@media (max-width: 768px) {
 
-}
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -68,7 +70,24 @@ body {
   color: white !important;
 }
 
-.gradiente{
-  background: rgb(3,195,236);
-background: linear-gradient(90deg, rgba(3,195,236,1) 0%, rgba(251,213,213,1) 42%);
+
+section{
+  scroll-behavior:smooth
+}
+
+body::-webkit-scrollbar {
+  width: 12px;               
+}
+
+body::-webkit-scrollbar-track {
+  background: #FBD5D5;        
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #F99595;    
+  /* border-radius: 20px;       
+  /* border: 3px solid #03c3ec;  */
+
+
+
 }

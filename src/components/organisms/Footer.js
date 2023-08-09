@@ -19,7 +19,8 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-gradient-to-r from-red-400 to-red-200 dark:bg-gray-900 lg:grid lg:grid-cols-5">
+    <section id="footer">
+    <footer className="bg-gradient-to-r from-red-400 to-red-300 dark:bg-gray-900 lg:grid lg:grid-cols-5">
       <div className="relative block h-96 lg:col-span-2 lg:h-full">
         <img
           className="absolute bg-cover inset-0 h-full w-full object-cover"
@@ -30,19 +31,19 @@ const Footer = () => {
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
           <div>
             <p>
-              <span className="text-md uppercase tracking-wide text-gray-500 dark:text-gray-600">
+              <span className="text-md uppercase tracking-wide text-white dark:text-gray-600">
                 COMUNICÁTE CON NOSOTROS
               </span>
 
               <a
                 href="#"
-                className="block font-medium text-gray-900 hover:opacity-75 dark:text-white sm:text-xl"
+                className="block font-medium text-white hover:opacity-75  dark:text-white sm:text-xl"
               >
                 +54 11-12345678
               </a>
             </p>
 
-            <ul className="mt-8 space-y-1 text-sm text-gray-700 dark:text-gray-200">
+            <ul className="mt-8 space-y-1 text-sm text-white dark:text-gray-200">
               <li>De lunes a viernes: 10am - 5pm</li>
               <li>E-mail: goldsandstravel@gmail.com</li>
             </ul>
@@ -51,48 +52,48 @@ const Footer = () => {
 
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             <div>
-              <p className="font-medium text-gray-900 dark:text-white">
+              <p className="font-medium text-white dark:text-white">
                 Servicios
               </p>
 
               <ul className="mt-6 space-y-4 text-sm cursor-pointer">
-                <li className="text-gray-700 transition hover:opacity-75 dark:text-gray-200">
+                <li className="text-white transition hover:opacity-75 dark:text-gray-200">
                   Reservas
                 </li>
 
-                <li className="text-gray-700 transition hover:opacity-75 dark:text-gray-200">
+                <li className="text-white transition hover:opacity-75 dark:text-gray-200">
                   Viajes a medida
                 </li>
 
-                <li className="text-gray-700 transition hover:opacity-75 dark:text-gray-200">
+                <li className="text-white transition hover:opacity-75 dark:text-gray-200">
                   Asistencia al viajero
                 </li>
 
-                <li className="text-gray-700 transition hover:opacity-75 dark:text-gray-200">
+                <li className="text-white transition hover:opacity-75 dark:text-gray-200">
                   Excursiones
                 </li>
 
-                <li className="text-gray-700 transition hover:opacity-75 dark:text-gray-200">
+                <li className="text-white transition hover:opacity-75 dark:text-gray-200">
                   Transfers
                 </li>
               </ul>
             </div>
 
             <div>
-              <p className="font-medium text-gray-900 dark:text-white">
+              <p className="font-medium text-white dark:text-white">
                 Nuestra empresa
               </p>
 
               <ul className="mt-6 space-y-4 text-sm cursor-pointer">
-                <li className="text-gray-700 transition hover:opacity-75 dark:text-gray-200">
+                <li className="text-white transition hover:opacity-75 dark:text-gray-200">
                   Sobre nosotros
                 </li>
 
-                <li className="text-gray-700 transition hover:opacity-75 dark:text-gray-200">
+                <li className="text-white transition hover:opacity-75 dark:text-gray-200">
                   Blog de viajes
                 </li>
 
-                <li className="text-gray-700 transition hover:opacity-75 dark:text-gray-200">
+                <li className="text-white transition hover:opacity-75 dark:text-gray-200">
                   Nuestro local
                 </li>
               </ul>
@@ -137,6 +138,8 @@ const Footer = () => {
         </div>
       </div>
     </footer>
+    </section>
+    
   );
 };
 

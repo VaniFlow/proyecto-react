@@ -4,6 +4,10 @@
 import React from 'react'
 import { Button, Navbar } from 'flowbite-react';
 
+
+
+
+
 const Nav = () => {
   return (
    <>
@@ -25,24 +29,27 @@ const Nav = () => {
       <Navbar.Collapse >
         <Navbar.Link className='bg-red-200'
           active
-          href="#"
+          href="#inicio"
         >
           <p className='text-[20px] text-white hover:text-red-300'> 
             Inicio
           </p>
         </Navbar.Link>
-        <Navbar.Link href="#" >
+        <Navbar.Link href="#destinos" >
           <p className='text-[20px] text-white hover:text-red-300'>Destinos</p>
         </Navbar.Link>
-        <Navbar.Link href="#" className='text-[25px]'>
+        <Navbar.Link href="#about" className='text-[25px]'>
           <p className='text-[20px] text-white hover:text-red-300'>Sobre Nosotros</p>
         </Navbar.Link>
        
-        <Navbar.Link href="#" className='text-[20px]'>
+        <Navbar.Link active href="#footer" className='text-[20px]'>
           <p className='text-[20px] text-white hover:text-red-300'>Contacto</p>
         </Navbar.Link>
       </Navbar.Collapse>
     </Navbar>
+    
+    
+    
     </>
    )
 }
