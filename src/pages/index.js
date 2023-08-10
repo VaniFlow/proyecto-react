@@ -3,6 +3,7 @@ import Head from "next/head"
 import Footer from "@/components/organisms/Footer"
 import Homepart from "@/components/organisms/Homepart"
 import About from "@/components/organisms/About"
+import Proveedores from "@/components/organisms/Provedores"
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
    
     <CardList />
     <About/>
+    <Proveedores/>
     <Footer/>
     </>
 
