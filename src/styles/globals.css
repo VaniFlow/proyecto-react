@@ -15,76 +15,83 @@
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
-    background-color:linear-gradient(90deg, #03c3ec 0%, #fbd5d5 42%);;
+    background-color: linear-gradient(90deg, #03c3ec 0%, #fbd5d5 42%);
+    ;
   }
 }
+
 @font-face {
   font-family: "letra1";
-  src: url(../public/fonts/ComingSoon-Regular.ttf);
+  src: url(../public/fonts/Lato-Regular.ttf);
+  font-family: "letra-home";
+  src: url(../public/fonts/ComicNeue-Regular.ttf);
 }
-*{
-  font-family: "letra1" , sans-serif ;
 
-  scroll-behavior:smooth;
+* {
+  font-family: "letra1", sans-serif;
 
-  overflow-x:"hidden"
+  scroll-behavior: smooth;
+
+  overflow-x: "hidden"
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
+  background: linear-gradient(to bottom,
       transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
 }
-.slick-track{
+
+.slick-track {
   cursor: grabbing;
   left: 3rem !important;
 }
+
 @media (max-width: 768px) {
-.slick-track{
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  height: 250px;
-}
+  .slick-track {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    height: 250px;
+  }
 }
 
 @media (max-width: 552px) {
-  .slick-track{
+  .slick-track {
     left: 0 !important;
   }
 }
-.slick-dots li.slick-active button:before{
-  color: white !important;
-}
-.slick-dots li.slick-active button:hover{
+
+.slick-dots li.slick-active button:before {
   color: white !important;
 }
 
-.slick-dots:hover{
+.slick-dots li.slick-active button:hover {
   color: white !important;
 }
-.slick-dots li:hover{
+
+.slick-dots:hover {
+  color: white !important;
+}
+
+.slick-dots li:hover {
   color: white !important;
 }
 
 
-section{
-  scroll-behavior:smooth
+section {
+  scroll-behavior: smooth
 }
 
 body::-webkit-scrollbar {
-  width: 12px;               
+  width: 12px;
 }
 
 body::-webkit-scrollbar-track {
-  background: #FBD5D5;        
+  background: #FBD5D5;
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: #F99595;    
+  background-color: #F99595;
   /* border-radius: 20px;       
   /* border: 3px solid #03c3ec;  */
 

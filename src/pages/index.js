@@ -2,6 +2,7 @@ import CardList from "@/components/organisms/CardList"
 import Head from "next/head"
 import Footer from "@/components/organisms/Footer"
 import Homepart from "@/components/organisms/Homepart"
+import About from "@/components/organisms/About"
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
     <Homepart/>
    
     <CardList />
+    <About/>
     <Footer/>
     </>
 

@@ -8,13 +8,13 @@ const Cards = ({card}) => {
     <>
      <div className="relative w-80 h-[450px] rounded-[10px] overflow-hidden  mb-[5px] text-left">
   <div className="opacity-80">
-    <img
-      src={card.imgfondo}
-      className="w-full h-full object-cover absolute"
-      alt="Fondo"
-    />
-  </div>
-
+  <div className='bg-black opacity-40 w-full h-full absolute z-[10]'></div>
+  <img
+    src={card.imgfondo}
+    className="w-full h-full object-cover absolute"
+    alt="Fondo"
+  />
+</div>
   <div className="w-full z-[20] transition-[0.5s] p-5 left-0 -bottom-2.5">
     <img
       src={card.imglogo}
