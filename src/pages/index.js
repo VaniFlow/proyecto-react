@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <>
     <Head>
-    <title>Gold Sands Tours</title>
+    <title>Gold Sands Travel</title>
     <link rel="shortcut icon" href="https://i.postimg.cc/MZjWxcmK/palmerita.png" />
     </Head>
 

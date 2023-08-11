@@ -24,25 +24,18 @@ const Nav = () => {
           </button>
           <Navbar.Toggle className="bg-transparent border-none" />
         </div>
-        <Navbar.Collapse>
-          <Navbar.Link className="bg-red-200" active href="#inicio">
-            <p className="text-[20px] text-white hover:text-red-300">Inicio</p>
+        <Navbar.Collapse className="bg-transparent " >
+        <Navbar.Link className="bg-transparent " active href="#inicio">
+            <p className="text-[20px] text-white ">Inicio</p>
           </Navbar.Link>
-          <Navbar.Link href="#destinos">
-            <p className="text-[20px] text-white hover:text-red-300">
-              Destinos
-            </p>
+          <Navbar.Link className="bg-transparent" active href="#destinos">
+            <p className="text-[20px] text-white ">Destinos</p>
           </Navbar.Link>
-          <Navbar.Link href="#about" className="text-[25px]">
-            <p className="text-[20px] text-white hover:text-red-300">
-              Sobre Nosotros
-            </p>
-          </Navbar.Link>
-
-          <Navbar.Link active href="#footer" className="text-[20px]">
-            <p className="text-[20px] text-white hover:text-red-300">
-              Contacto
-            </p>
+          <Navbar.Link className="bg-transparent" active href="#about">
+            <p className="text-[20px] text-white ">Sobre Nosotros</p>
+          </Navbar.Link>       
+          <Navbar.Link className="bg-transparent" active href="#footer">
+            <p className="text-[20px] text-white ">Contacto</p>
           </Navbar.Link>
         </Navbar.Collapse>
       </Navbar>
