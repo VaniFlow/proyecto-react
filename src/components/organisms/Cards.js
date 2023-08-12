@@ -1,9 +1,37 @@
 import DirectionsCarFilledOutlinedIcon from '@mui/icons-material/DirectionsCarFilledOutlined';
 import FlightTakeoffOutlinedIcon from '@mui/icons-material/FlightTakeoffOutlined';
 import HotelOutlinedIcon from '@mui/icons-material/HotelOutlined';
+import { useContext, useEffect, useState} from 'react';
+import { DataContext } from '../context/dataContext';
 
 
 const Cards = ({card}) => {
+
+  const { data, cart, setCart, total, setTotal, setInCart, InCart } = useContext(DataContext);
+
+
+
+
+  const BuyProduct = (card) => {
+    const existingCartItem = cart.find(item => item.id === card.id);
+    setTotal(total)
+    if (existingCartItem) {
+      
+      const updatedCart = cart.map(item =>
+        item.id === card.id ? { ...item, quantity: item.quantity + 1, } : item
+        );
+        setCart(updatedCart);
+
+    } else {
+      setCart([...cart, { ...card, quantity: 1 }]);
+    }
+  };
+  
+  useEffect(() => {
+    console.log(cart);
+
+  }, [cart]);
+
   return (
     <>
      <div className="relative w-80 h-[450px] rounded-[10px] overflow-hidden  mb-[5px] text-left">
@@ -42,6 +70,7 @@ const Cards = ({card}) => {
       <div className=" bottom-0 left-0 w-full flex items-center justify-between">
         <a
           href="#"
+          onClick={(e) => BuyProduct(card)}
           className="rounded-[10px] bg-customRed text-1em text-white text-decoration-none px-5 py-2 border-radius background-transition"
         >
           Agregar a carrito
