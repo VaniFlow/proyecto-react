@@ -5,15 +5,15 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { DataContext } from "../context/dataContext";
 
 const Nav = () => {
-  const { cart } = useContext(DataContext); // Reemplaza 'data' con el nombre real de tu contexto
+  const { cart } = useContext(DataContext); 
   const [openCart, setOpenCart] = useState(false);
-  const [total, setTotal] = useState(0); // Usamos un estado para el total
+  const [total, setTotal] = useState(0); 
 
   useEffect(() => {
-    // Calculamos el total cada vez que cambie el carrito
+    // Calcula total cuando cart cambia
     const newTotal = cart.reduce((acc, el) => acc + el.precio * el.quantity, 0);
     setTotal(newTotal);
-  }, [cart]); // Se ejecutará cuando 'cart' cambie
+  }, [cart]); 
 
   const formattedTotal = total.toLocaleString("en-US", {
     style: "currency",
@@ -50,18 +50,17 @@ const Nav = () => {
               <ShoppingCartIcon style={{ transform: "scale(1.3)" }} />{" "}
               <span>{totalCartItems}</span>
             </button>
-            <div>
+            <div></div>
+            {openCart && (
+              <div>
+                <CartItem
+                  cart={cart}
+                  total={formattedTotal}
+                />
+                <div className="flex flex-col"></div>
               </div>
-  {openCart && (
-    <div>
-      <CartItem cart={cart} total={formattedTotal} />
-      <div className="flex flex-col">
-       
-      </div>
-    </div>
-  )}
-</div>
-
+            )}
+          </div>
 
           <Navbar.Toggle className="bg-transparent border-none" />
         </div>
