@@ -1,8 +1,8 @@
-import React, { useState, useContext, useEffect  } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { Button, Navbar } from "flowbite-react";
+import CartItem from "../organisms/cartItem";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { DataContext } from "../context/dataContext";
-
 
 const Nav = () => {
   const { cart } = useContext(DataContext); // Reemplaza 'data' con el nombre real de tu contexto
@@ -15,14 +15,14 @@ const Nav = () => {
     setTotal(newTotal);
   }, [cart]); // Se ejecutará cuando 'cart' cambie
 
-  const formattedTotal = total.toLocaleString('en-US', {
-    style: 'currency',
-    currency: 'USD'
+  const formattedTotal = total.toLocaleString("en-US", {
+    style: "currency",
+    currency: "USD",
   });
 
   const totalCartItems = cart.reduce((total, item) => total + item.quantity, 0);
 
-  const handleClick = () => { 
+  const handleClick = () => {
     setOpenCart(!openCart);
   };
 
@@ -47,47 +47,51 @@ const Nav = () => {
               onClick={handleClick}
               className="bg-red-400 hover:bg-red-200 rounded-[10px] p-[7px] text-white hover:text-red-400"
             >
-              <ShoppingCartIcon style={{ transform: "scale(1.3)" }} /> <span>{totalCartItems}</span>
+              <ShoppingCartIcon style={{ transform: "scale(1.3)" }} />{" "}
+              <span>{totalCartItems}</span>
             </button>
-            {openCart ? (
-              <div style={{ backgroundColor: "white", padding: "2rem", position:"absolute", right:"0" }}>
-                <h4 className="text-black">Carrito</h4>
-                {cart.map((card) => (
-                  <>
-                  <div
-                    key={card.id}
-                    className="text-black flex items-center mb-6 gap-4"
-                  >
-                    <img className="w-20 h-20" src={card.imgfondo}></img>
-                    <p>{card.titulo}</p>
-                    <span>{card.quantity}</span>
-                    <span>${card.precio * card.quantity}</span>
-                  </div>
-                    </>
-                ))}
-                <div>
-                <div className="flex flex-col">
-                      <h3 className="text-black text-right">Total:{" "}{formattedTotal}</h3>
-                    </div>
-                </div>
-                    
+            <div>
               </div>
-            ) : null}
-          </div>
+  {openCart && (
+    <div>
+      <CartItem cart={cart} total={formattedTotal} />
+      <div className="flex flex-col">
+       
+      </div>
+    </div>
+  )}
+</div>
+
 
           <Navbar.Toggle className="bg-transparent border-none" />
         </div>
-        <Navbar.Collapse className="bg-transparent " >
-        <Navbar.Link className="bg-transparent " active href="#inicio">
+        <Navbar.Collapse className="bg-transparent ">
+          <Navbar.Link
+            className="bg-transparent "
+            active
+            href="#inicio"
+          >
             <p className="text-[20px] text-white ">Inicio</p>
           </Navbar.Link>
-          <Navbar.Link className="bg-transparent" active href="#destinos">
+          <Navbar.Link
+            className="bg-transparent"
+            active
+            href="#destinos"
+          >
             <p className="text-[20px] text-white ">Destinos</p>
           </Navbar.Link>
-          <Navbar.Link className="bg-transparent" active href="#about">
+          <Navbar.Link
+            className="bg-transparent"
+            active
+            href="#about"
+          >
             <p className="text-[20px] text-white ">Sobre Nosotros</p>
-          </Navbar.Link>       
-          <Navbar.Link className="bg-transparent" active href="#footer">
+          </Navbar.Link>
+          <Navbar.Link
+            className="bg-transparent"
+            active
+            href="#footer"
+          >
             <p className="text-[20px] text-white ">Contacto</p>
           </Navbar.Link>
         </Navbar.Collapse>

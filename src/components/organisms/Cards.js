@@ -9,9 +9,6 @@ const Cards = ({card}) => {
 
   const { data, cart, setCart, total, setTotal, setInCart, InCart } = useContext(DataContext);
 
-
-
-
   const BuyProduct = (card) => {
     const existingCartItem = cart.find(item => item.id === card.id);
     setTotal(total)
