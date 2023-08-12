@@ -29,10 +29,8 @@
 
 * {
   font-family: "letra1", sans-serif;
-
   scroll-behavior: smooth;
-
-  overflow-x: "hidden"
+  overflow-x: "hidden";
 }
 
 body {
@@ -40,8 +38,14 @@ body {
   background: linear-gradient(to bottom,
       transparent,
       rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+      color:white;
 }
-
+.css-i104bv87-MuiSvgIcon-root{ /* remove items cart*/
+  width: 20px !important;
+}
+.css-i4bv87-MuiSvgIcon-root{ /* add items cart */
+  width: 20px !important;
+}
 .slick-track {
   cursor: grabbing;
   left: 3rem !important;
