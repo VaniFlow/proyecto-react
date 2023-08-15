@@ -1,9 +1,14 @@
 import React, { useContext, useState } from "react";
 import RemoveCircleOutlineIcon from "@mui/icons-material/RemoveCircleOutline";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
+import DeleteIcon from '@mui/icons-material/Delete';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import Modal from '@mui/material/Modal';
 import { DataContext } from "../context/dataContext"; 
 import { motion, AnimatePresence } from "framer-motion"
-import Modal from "react-modal"; 
+import ConfirmationModal from "../atoms/Modal"; 
 
 const CartItem = ({ cart, total }) => {
   const { setCart } = useContext(DataContext);
@@ -54,8 +59,21 @@ const handleDeleteConfirmed = (itemId) => {
   setCart(updatedCart);
   closeModal();
 };
-  
-  
+
+const [open, setOpen] = React.useState(false);
+const handleOpen = () => setOpen(true);
+const handleClose = () => setOpen(false);
+
+const handleDeleteProduct = (productId) => {
+  const updatedCart = cart.filter((item) => item.id !== productId);
+  console.log(productId)
+  setCart(updatedCart);
+};
+
+const clearCart = () => {
+  const updatedCart = [];
+  setCart(updatedCart); 
+}
   
   const customStyles = {
     content: {
@@ -74,8 +92,19 @@ const handleDeleteConfirmed = (itemId) => {
     },
   };
 
+  const modalStyle = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: 400,
+    bgcolor: 'background.paper',
+    border: '2px solid #000',
+    boxShadow: 24,
+    p: 4,
+  };
+ 
   return (
-
 
 <div
   style={{
@@ -94,7 +123,7 @@ const handleDeleteConfirmed = (itemId) => {
     <AnimatePresence key={card.id}>
       <motion.div
       
-        className="text-black flex items-center mb-6 gap-4"
+        className="flex items-center gap-4 mb-6 text-black"
         initial={{ opacity: 0, y: 100 }} 
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, x: 100 }} 
@@ -114,47 +143,64 @@ const handleDeleteConfirmed = (itemId) => {
           <RemoveCircleOutlineIcon />
         </button>
         <span className="text-black">${card.precio * card.quantity}</span>
+        <button
+  style={{
+    backgroundColor: "#F99999",
+    padding: ".5rem ",
+    borderRadius: "10px",
+    color: "white",
+  }} 
+  onClick={() => {
+    setItemToDelete(card.id);
+    setModalIsOpen(true);
+  }}
+>
+  <DeleteIcon style={{ marginTop: "-0.2rem" }} />
+  Eliminar
+</button>
+
       </motion.div>
     </AnimatePresence>
   ))}
-      <Modal
-        style={customStyles}
-        isOpen={modalIsOpen}
-        onRequestClose={closeModal}
-        contentLabel="Eliminar artículo"
-      >
-        <div className="flex flex-col items-center justify-center h-full">
-          <h2 className="text-black">¿Eliminar este artículo?</h2>
-          <div className="flex gap-2 justify-center mt-5">
-            <button
-              style={{
-                backgroundColor: "#F99999",
-                padding: ".5rem ",
-                borderRadius: "10px",
-                color: "white",
-              }}
-              onClick={handleDeleteConfirmed}
-            >
-              Eliminar
-            </button>
-            <button
-              style={{
-                border: "1px solid #F99999",
-                padding: ".5rem ",
-                borderRadius: "10px",
-              }}
-              onClick={closeModal}
-            >
-              Cancelar
-            </button>
-          </div>
-        </div>
-      </Modal>
-      <div>
-        <h3 className="text-black text-right">Total: {total}</h3>
-      </div>
+    <ConfirmationModal
+      isOpen={modalIsOpen}
+      onRequestClose={closeModal}
+      onConfirm={handleDeleteConfirmed}
+      contentLabel="Eliminar artículo"
+    />
+    <div>
+    <Modal
+      isOpen={setModalIsOpen}
+      onRequestClose={closeModal}
+      onConfirm={() => handleDeleteProduct(productIdToDelete)}
+      contentLabel="Eliminar artículo"
+>
+  <Box sx={modalStyle}>
+    <Typography id="modal-modal-title" variant="h6" component="h2" className="text-center text-black">
+      ¿Deseas eliminar todos los productos?
+    </Typography>
+    <Button variant="contained" className="text-black" onClick={() => handleDeleteProduct(productIdToDelete)}>Confirmar</Button>
+  </Box>
+</Modal>
     </div>
-  );
+      <div className="flex items-center justify-end gap-4 mb-6">
+        <h3 className="text-black"> Total: {total}</h3>
+        <button 
+        style={{
+          backgroundColor: "#F99999",
+          padding: ".5rem ",
+          borderRadius: "10px",
+          color: "white",
+          width:"95px"
+        }} onClick={() => clearCart ()}>
+            <DeleteIcon style={{
+              marginTop: "-0.2rem"
+            }}/>
+             Vaciar
+          </button>
+      </div> 
+    </div>     
+ );
 };
 
 export default CartItem;
