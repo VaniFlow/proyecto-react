@@ -38,14 +38,21 @@ body {
   background: linear-gradient(to bottom,
       transparent,
       rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
-      color:white;
+  color: white;
+
+  padding-right: 0 !important;
 }
-.css-i104bv87-MuiSvgIcon-root{ /* remove items cart*/
+
+.css-i104bv87-MuiSvgIcon-root {
+  /* remove items cart*/
   width: 20px !important;
 }
-.css-i4bv87-MuiSvgIcon-root{ /* add items cart */
+
+.css-i4bv87-MuiSvgIcon-root {
+  /* add items cart */
   width: 20px !important;
 }
+
 .slick-track {
   cursor: grabbing;
   left: 3rem !important;
@@ -63,7 +70,7 @@ body {
   .slick-track {
     left: 0 !important;
   }
-  
+
 }
 
 .slick-dots li.slick-active button:before {
@@ -102,4 +109,13 @@ body::-webkit-scrollbar-thumb {
 
 
 
+}
+
+@media (max-width: 767px) {
+  .cart-container{
+    font-size: .8rem;
+    padding: .8rem !important;
+    width: 100% !important;
+    height: 600px !important;
+  }
 }

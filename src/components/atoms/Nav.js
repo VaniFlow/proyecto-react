@@ -55,6 +55,8 @@ const Nav = () => {
               <div>
                 <CartItem
                   cart={cart}
+                  openCart={openCart}
+                  setOpenCart={setOpenCart}
                   total={formattedTotal}
                 />
                 <div className="flex flex-col"></div>
