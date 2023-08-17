@@ -33,10 +33,10 @@ const Cards = ({card}) => {
     <>
      <div className="relative w-80 h-[450px] rounded-[10px] overflow-hidden  mb-[5px] text-left">
   <div className="opacity-80">
-  <div className='bg-black opacity-40 w-full h-full absolute z-[10]'></div>
+  <div className="bg-black opacity-40 w-full h-full absolute z-[10]"></div>
   <img
     src={card.imgfondo}
-    className="w-full h-full object-cover absolute"
+    className="absolute object-cover w-full h-full"
     alt="Fondo"
   />
 </div>
@@ -63,8 +63,8 @@ const Cards = ({card}) => {
       <FlightTakeoffOutlinedIcon/>
       <DirectionsCarFilledOutlinedIcon/>
       </ul>
-      <div className=' relative bottom-0'>
-      <div className=" bottom-0 left-0 w-full flex items-center justify-between">
+      <div className='relative bottom-0 '>
+      <div className="bottom-0 left-0 flex items-center justify-between w-full ">
         <button
           onClick={(e) => BuyProduct(card)}
           className="rounded-[10px] bg-customRed text-1em text-white text-decoration-none px-5 py-2 border-radius background-transition"

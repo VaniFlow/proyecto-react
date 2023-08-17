@@ -116,6 +116,17 @@ body::-webkit-scrollbar-thumb {
     font-size: .8rem;
     padding: .8rem !important;
     width: 100% !important;
-    height: 600px !important;
+    height: 600px !important;    
+  }
+}
+
+
+@media (max-width: 768px) {
+  .h-20 {
+    height: auto; 
+  }
+
+  .w-60 {
+    width: 100%; 
   }
 }
