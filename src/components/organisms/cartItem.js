@@ -112,7 +112,7 @@ const CartItem = ({ cart, total, openCart, setOpenCart }) => {
                 exit={{ opacity: 0, x: 100 }}
                 transition={{ duration: 0.3 }}
               >
-                <div className="h-20 w-60">
+                <div className="h-20 w-[80px]">
                   <img
                     className="w-full h-full rounded"
                     src={card.imgfondo}
