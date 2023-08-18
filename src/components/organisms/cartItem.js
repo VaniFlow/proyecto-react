@@ -31,6 +31,8 @@ const CartItem = ({ cart, total, openCart, setOpenCart }) => {
     setCart(updatedCart);
   };
 
+
+
   const handleDecrement = (itemId) => {
     const itemToDelete = cart.find((item) => item.id === itemId);
 
@@ -84,25 +86,45 @@ const CartItem = ({ cart, total, openCart, setOpenCart }) => {
     },
   };
 
+  const modalStyle = {
+    top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)",
+    textAlign: "center",
+    color: "black",
+    width: "600px",
+    height: "200px",
+
+    marginTop: "2rem",
+  };
+
   return (
     <div
       className="cart-container"
       style={{
         backgroundColor: "white",
-        padding: "2rem",
+        padding: "1rem",
         borderRadius: ".6rem",
         width: "500px",
+        minHeight:'200px',
         maxHeight: "600px",
-        overflowY: "scroll",
+        overflowY: cart.length > 4 ? "scroll" : "hidden" ,
         position: "absolute",
+        
         right: "0",
         color: "black",
         zIndex: 10,
       }}
+
+      
     >
+      
       {cart.length > 0 ? (
         <div>
-          <h4 className="text-black">Carrito</h4>
+          <h4 className="text-red-400 font-bold ">Carrito</h4>
           {cart.map((card) => (
             <AnimatePresence key={card.id}>
               <motion.div
@@ -112,26 +134,28 @@ const CartItem = ({ cart, total, openCart, setOpenCart }) => {
                 exit={{ opacity: 0, x: 100 }}
                 transition={{ duration: 0.3 }}
               >
-                <div className="h-20 w-[80px]">
+                <div className="imagencarrito w-[80px] h-[80px] min-w-[40px] rounded-[10px]"> 
                   <img
-                    className="w-full h-full rounded"
+                    className="w-[100%] h-[100%] rounded-[10px] object-cover "
                     src={card.imgfondo}
                     alt={card.titulo}
                   />
                 </div>
-                <p className="text-black w-[100px]">{card.titulo}</p>
-                <button onClick={() => handleIncrement(card.id)}>
-                  <AddCircleOutlineIcon />
+                <p className="text-black w-[150px] ">{card.titulo}</p>
+                <div className=" flex flex-row m-[10px] justify-center items-center max-w-[70px]">
+                <button onClick={() => handleIncrement(card.id)} >
+                  <AddCircleOutlineIcon className="m-[3px]" />
                 </button>
                 <span className="text-black">{card.quantity}</span>
-                <button
+                <button 
                   onClick={() => {
                     setItemToDelete(card.id);
                     handleDecrement(card.id);
                   }}
                 >
-                <RemoveCircleOutlineIcon/>
+                <RemoveCircleOutlineIcon className="m-[3px]"/>
                 </button>
+                </div>
               
                   <Modal
                     open={open2 && itemToDelete === card.id} // Abre el modal solo si open2 es true y el itemToDelete coincide con el producto actual
@@ -144,11 +168,11 @@ const CartItem = ({ cart, total, openCart, setOpenCart }) => {
                         id="modal-modal-title"
                         variant="h6"
                         component="h2"
-                        className="mb-5 text-center"
+                        className="text-center mb-5"
                       >
                         ¿Estas seguro que deseas eliminar el producto?
                       </Typography>
-                      <div className="flex flex-wrap justify-center gap-8 ">
+                      <div className="flex justify-center gap-8 flex-wrap ">
                         <Button
                           onClick={() =>
                             handleDeleteProduct(
@@ -157,14 +181,14 @@ const CartItem = ({ cart, total, openCart, setOpenCart }) => {
                             )
                           }
                           variant="contained"
-                          className="flex-wrap bg-red-400 hover:bg-red-500"
+                          className=" bg-red-400 hover:bg-red-500 flex-wrap "
                         >
                           SI
                         </Button>
                         <Button
                           onClick={handleClose2}
                           variant="outlined"
-                          className="flex-wrap text-red-400 border-red-400 border-solid border-1 hover:border-red-500 hover:bg-red-50"
+                          className="border-solid border-1 border-red-400 text-red-400 hover:border-red-500 hover:bg-red-50  flex-wrap"
                         >
                           NO
                         </Button>
@@ -175,48 +199,57 @@ const CartItem = ({ cart, total, openCart, setOpenCart }) => {
                 <span className="text-black">
                   ${card.precio * card.quantity}
                 </span>
-                <button
+                <button className="bottonEliminarCarrito"
                   style={{
                     backgroundColor: "#F99999",
                     padding: ".5rem ",
                     borderRadius: "10px",
                     color: "white",
-                  }}
+                    flexWrap: "nowrap",
+                    flexDirection: "row",
+                    width: "200px",
+                    minWidth: '50px', 
+                    
+
+                    
+                    
+                                      }}
                   onClick={() => {
                     setItemToDelete(card.id);
                     handleOpen3(true);
                   }}
                 >
-                  <DeleteIcon style={{ marginTop: "-0.2rem" }} />
-                  Eliminar
+                  <DeleteIcon className="tachoeleminarcarrito" style={{ marginTop: "-0.2rem" }} />
+                  <span className="eliminartexto " >Eliminar</span>
                 </button>
                 <Modal
             open={open3}
             onClose={handleClose3}
             aria-labelledby="modal-modal-title"
             aria-describedby="modal-modal-description"
+            
           >
             <Box sx={style}>
               <Typography
                 id="modal-modal-title"
                 variant="h6"
                 component="h2"
-                className="mb-5 text-center"
+                className="text-center mb-5"
               >
                 ¿Estas seguro que deseas eliminar el producto sin importar la cantidad?
               </Typography>
-              <div className="flex flex-wrap justify-center gap-8 ">
+              <div className="flex justify-center gap-8 flex-wrap ">
                 <Button
                   onClick={() =>{handleDeleteAllProducts(card.id), setItemToDelete(card.id)}}
                   variant="contained"
-                  className="flex-wrap bg-red-400 hover:bg-red-500"
+                  className=" bg-red-400 hover:bg-red-500 flex-wrap "
                 >
                   SI
                 </Button>
                 <Button
                   onClick={handleClose3}
                   variant="outlined"
-                  className="flex-wrap text-red-400 border-red-400 border-solid border-1 hover:border-red-500 hover:bg-red-50"
+                  className="border-solid border-1 border-red-400 text-red-400 hover:border-red-500 hover:bg-red-50  flex-wrap"
                 >
                   NO
                 </Button>
@@ -263,23 +296,23 @@ const CartItem = ({ cart, total, openCart, setOpenCart }) => {
                 id="modal-modal-title"
                 variant="h6"
                 component="h2"
-                className="mb-5 text-center"
+                className="text-center mb-5"
               >
                 ¿Estas seguro que deseas eliminar todos los productos del
                 carrito?
               </Typography>
-              <div className="flex flex-wrap justify-center gap-8 ">
+              <div className="flex justify-center gap-8 flex-wrap ">
                 <Button
                   onClick={clearCart}
                   variant="contained"
-                  className="flex-wrap bg-red-400 hover:bg-red-500"
+                  className=" bg-red-400 hover:bg-red-500 flex-wrap "
                 >
                   SI
                 </Button>
                 <Button
                   onClick={handleClose}
                   variant="outlined"
-                  className="flex-wrap text-red-400 border-red-400 border-solid border-1 hover:border-red-500 hover:bg-red-50"
+                  className="border-solid border-1 border-red-400 text-red-400 hover:border-red-500 hover:bg-red-50  flex-wrap"
                 >
                   NO
                 </Button>
@@ -288,7 +321,11 @@ const CartItem = ({ cart, total, openCart, setOpenCart }) => {
           </Modal>
         </div>
       ) : (
+        
+        
         <CartEmpty />
+        
+        
       )}
     </div>
   );

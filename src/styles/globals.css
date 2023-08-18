@@ -120,9 +120,20 @@ body::-webkit-scrollbar-thumb {
   }
 }
 
+@media (max-width: 396px) {
+  .eliminartexto{
+    position: absolute;
+    visibility: hidden;
 
-@media (max-width: 768px) {
-  .h-20 {
-    height: 50px; 
-  }
+  }  
+  
+}
+
+@media (max-width: 396px) {
+  .imagencarrito{
+    position: absolute;
+    visibility: hidden;
+
+  }  
+  
 }
