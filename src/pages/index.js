@@ -7,9 +7,10 @@ import Nav from "@/components/atoms/Nav";
 import Proveedores from "@/components/organisms/Provedores";
 import { DataContextProvider } from "@/components/context/dataContext";
 
+import Participantes from "./Participantes";
+
 export default function Home() {
   return (
-    <>
     <DataContextProvider>
       <Head>
         <title>Gold Sands Tours</title>
@@ -18,13 +19,12 @@ export default function Home() {
           href="https://i.postimg.cc/MZjWxcmK/palmerita.png"
         />
       </Head>
-      <Nav/>
+      <Nav />
+     
       <Homepart />
-      <CardList />
-      <About />
-      <Proveedores />
-      <Footer />
-      </DataContextProvider>
-    </>
+       <CardList /> <About />
+        <Proveedores />
+         <Footer />
+    </DataContextProvider>
   );
 }

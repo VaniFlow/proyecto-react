@@ -1,19 +1,23 @@
 import React, { useState, useContext, useEffect } from "react";
+import Link from "next/link";
+import { useRouter } from "next/router";
 import { Button, Navbar } from "flowbite-react";
 import CartItem from "../organisms/cartItem";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { DataContext } from "../context/dataContext";
 
 const Nav = () => {
-  const { cart } = useContext(DataContext); 
+  const { cart } = useContext(DataContext);
   const [openCart, setOpenCart] = useState(false);
-  const [total, setTotal] = useState(0); 
+  const [total, setTotal] = useState(0);
 
   useEffect(() => {
-    // Calcula total cuando cart cambia
-    const newTotal = cart.reduce((acc, el) => acc + el.precio * el.quantity, 0);
+    const newTotal = cart.reduce(
+      (acc, el) => acc + el.precio * el.quantity,
+      0
+    );
     setTotal(newTotal);
-  }, [cart]); 
+  }, [cart]);
 
   const formattedTotal = total.toLocaleString("en-US", {
     style: "currency",
@@ -26,10 +30,12 @@ const Nav = () => {
     setOpenCart(!openCart);
   };
 
+  const router = useRouter();
+
   return (
     <>
       <Navbar
-        className=" bg-white/10 w-full fixed  z-30  backdrop-blur"
+        className="bg-white/10 w-full fixed z-30 backdrop-blur"
         fluid
         rounded
       >
@@ -67,34 +73,25 @@ const Nav = () => {
           <Navbar.Toggle className="bg-transparent border-none" />
         </div>
         <Navbar.Collapse className="bg-transparent ">
-          <Navbar.Link
-            className="bg-transparent "
-            active
-            href="#inicio"
-          >
-            <p className="text-[20px] text-white ">Inicio</p>
+          <Navbar.Link className="bg-transparent " active href="#inicio">
+            <p className="text-[20px] text-white">Inicio</p>
           </Navbar.Link>
-          <Navbar.Link
-            className="bg-transparent"
-            active
-            href="#destinos"
-          >
-            <p className="text-[20px] text-white ">Destinos</p>
+          <Navbar.Link className="bg-transparent" active href="#destinos">
+            <p className="text-[20px] text-white">Destinos</p>
           </Navbar.Link>
-          <Navbar.Link
-            className="bg-transparent"
-            active
-            href="#about"
-          >
-            <p className="text-[20px] text-white ">Sobre Nosotros</p>
+          <Navbar.Link className="bg-transparent" active href="#about">
+            <p className="text-[20px] text-white">Sobre Nosotros</p>
           </Navbar.Link>
-          <Navbar.Link
-            className="bg-transparent"
-            active
-            href="#footer"
-          >
-            <p className="text-[20px] text-white ">Contacto</p>
+          <Navbar.Link className="bg-transparent" active href="#footer">
+            <p className="text-[20px] text-white">Contacto</p>
           </Navbar.Link>
+
+          {/* Enlace utilizando Link de next/link */}
+         
+            <Link href="/Participantes">
+              <h1 className="text-[20px] text-white">Participantes</h1>
+            </Link>
+         
         </Navbar.Collapse>
       </Navbar>
     </>
