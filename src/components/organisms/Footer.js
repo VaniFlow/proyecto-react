@@ -121,16 +121,10 @@ const Footer = () => {
                     className="w-full px-2 py-1 mr-6 leading-tight text-gray-700 bg-white border-none rounded-lg appearance-none ring ring-red-300 hover:ring-slate-300"
                     type="text"
                     placeholder="Tu e-mail" onChange={handleChange} value={form.email}
-                    aria-label="Full mail"
-                  ></input>
-                  <button
-                    className="flex-shrink-0 px-2 py-1 text-sm italic text-white bg-red-300 border-2 border-red-300 rounded-lg shadow-hover:bg-red-300 hover:border-red-300 shadow-red-400/50 hover:not-italic"
-                    type="email" name= "email"
-                    placeholder="Tu e-mail">
+                    aria-label="Full mail"></input>
                   <input 
                     className="px-2 py-1 text-sm italic text-white bg-red-300 border-2 border-red-300 rounded-lg shadow-lg hover:bg-red-300 hover:border-red-300 shadow-red-400/50 hover:not-italic h-7"
                     type="submit" value="Suscribirme"></input>
-                  </button>
                 </div>
               </form>
             </div>
