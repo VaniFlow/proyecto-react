@@ -6,6 +6,7 @@ import About from "@/components/organisms/About";
 import Nav from "@/components/atoms/Nav";
 import Proveedores from "@/components/organisms/Provedores";
 import { DataContextProvider } from "@/components/context/dataContext";
+import Equipo from "@/components/organisms/Equipo";
 
 export default function Home() {
   return (
@@ -23,6 +24,7 @@ export default function Home() {
       <CardList />
       <About />
       <Proveedores />
+      <Equipo />
       <Footer />
       </DataContextProvider>
     </>
