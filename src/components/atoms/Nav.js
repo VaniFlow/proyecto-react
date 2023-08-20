@@ -39,7 +39,7 @@ const Nav = () => {
         fluid
         rounded
       >
-        <Navbar.Brand href="https://flowbite-react.com">
+        <Navbar.Brand href="/#">
           <img
             src="https://i.postimg.cc/kgT9tpds/Gold-Sands-Tours.png"
             border="0"

@@ -5,6 +5,7 @@ import Homepart from "@/components/organisms/Homepart";
 import About from "@/components/organisms/About";
 import Nav from "@/components/atoms/Nav";
 import Proveedores from "@/components/organisms/Provedores";
+import Equipo from "@/components/organisms/Equipo";
 import { DataContextProvider } from "@/components/context/dataContext";
 
 import Participantes from "./Participantes";
