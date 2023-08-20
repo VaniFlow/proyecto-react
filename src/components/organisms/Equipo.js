@@ -3,6 +3,10 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import { red } from "@mui/material/colors";
 import ariel from "../../../public/images/ariel.png";
+<<<<<<< HEAD
+=======
+import vani from "../../../public/images/vani.png";
+>>>>>>> 5e11cdd441f943b8545d86f2f52cbd62ae660e75
 import Image from "next/image";
 
 const Equipo = () => {
@@ -42,9 +46,15 @@ const Equipo = () => {
         <div className="mt-12 md:mt-12 lg:mt-0 relative flex flex-col items-center text-black bg-gradient-to-r from-stone-300 to-stone-200 border-2 border-slate-500 rounded-lg max-h-screen w-90 h-[270px] hover:bg-red-300 hover:border-red-300 shadow-red-400/50 ease-in-out">
           <div className="absolute -top-10">
             <Image
+<<<<<<< HEAD
               className="w-24 h-24 rounded-full object-fit"
               src={ariel}
               alt="Ariel"
+=======
+              className="w-24 h-24 rounded-full object-cover"
+              src={vani}
+              alt="Vanina"
+>>>>>>> 5e11cdd441f943b8545d86f2f52cbd62ae660e75
             />
           </div>
           <div className="flex flex-col items-center justify-center mt-16">
@@ -68,8 +78,13 @@ const Equipo = () => {
           <div className="absolute -top-10">
             <Image
               className="w-24 h-24 rounded-full object-fit"
+<<<<<<< HEAD
               src={ariel}
               alt="Ariel"
+=======
+              src={vani}
+              alt="Vanina"
+>>>>>>> 5e11cdd441f943b8545d86f2f52cbd62ae660e75
             />
           </div>
           <div className="flex flex-col items-center justify-center mt-16">
