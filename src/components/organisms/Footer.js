@@ -1,6 +1,6 @@
 import React from "react";
 import Media from "../atoms/Media";
-import Swal from 'sweetalert2';
+
 import { useState } from "react";
 
 const initialForm = {
@@ -16,13 +16,6 @@ const Footer = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    if (form.email === "") {
-      Swal.fire ({
-       confirmButtonColor: "#FB9B9B",
-       text: 'Debe ingresar un correo electrónico'
-      })
-     }
   };
 
   return (
