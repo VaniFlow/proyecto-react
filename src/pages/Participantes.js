@@ -1,6 +1,7 @@
 
 import Head from 'next/head'
 import Nav from '@/components/atoms/Nav'
+import Equipo from "@/components/organisms/Equipo"
 import React from 'react'
 
 const Participantes = () => {
@@ -15,8 +16,8 @@ const Participantes = () => {
       </Head>
       
 
-    <div className='h-[100vh] bg-white'>
-        <h1 className='text-black'>Hola</h1>  
+    <div>
+        <Equipo className="h-[80%]"/>  
     </div>
   
   </>
