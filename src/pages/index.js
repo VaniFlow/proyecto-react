@@ -22,9 +22,10 @@ export default function Home() {
       <Nav />
      
       <Homepart />
-       <CardList /> <About />
-        <Proveedores />
-         <Footer />
+       <CardList />
+       <About />
+       <Proveedores />
+       <Footer />
     </DataContextProvider>
   );
 }
