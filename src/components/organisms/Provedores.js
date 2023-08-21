@@ -20,8 +20,8 @@ const Proveedores = () => {
         
     <div className="grid gap-x-6 md:grid-cols-3 lg:gap-x-12">
       <div className="mb-12 md:mb-0">
-        <div className="mb-6 inline-block rounded-md bg-primary-100 p-4 text-primary">
-        <DirectionsCarFilledOutlinedIcon className="text-3xl"/>
+        <div className="inline-block p-4 mb-6 rounded-md bg-primary-100 text-primary">
+        <DirectionsCarFilledOutlinedIcon fontSize="large" className="text-5xl"/>
      </div>
         <h5 className="mb-4 text-lg font-bold">Marriott International</h5>
         <p className="text-white-900">
@@ -30,8 +30,8 @@ const Proveedores = () => {
       </div>
 
       <div className="mb-12 md:mb-0">
-      <div className="mb-6 inline-block rounded-md bg-primary-100 p-4 text-primary">
-     <FlightTakeoffOutlinedIcon className=" text-3xl"/>
+      <div className="inline-block p-4 mb-6 rounded-md bg-primary-100 text-primary">
+     <FlightTakeoffOutlinedIcon fontSize="large" className="text-5xl "/>
      </div>
         <h5 className="mb-4 text-lg font-bold">Etihad Airways</h5>
         <p className="text-white-900">
@@ -40,8 +40,8 @@ const Proveedores = () => {
       </div>
 
       <div className="mb-12 md:mb-0">
-      <div className="mb-6 inline-block rounded-md bg-primary-100 p-4 text-primary">
-     <HotelOutlinedIcon className=" text-3xl"/>
+      <div className="inline-block p-4 mb-6 rounded-md bg-primary-100 text-primary">
+     <HotelOutlinedIcon fontSize="large" className="text-5xl "/>
      </div>
         <h5 className="mb-4 text-lg font-bold">Assist Card</h5>
         <p className="text-white-900">
