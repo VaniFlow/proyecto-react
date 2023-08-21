@@ -17,7 +17,7 @@ const Participantes = () => {
       
 
     <div>
-        <Equipo className="h-[80%]"/>  
+        <Equipo/>  
     </div>
   
   </>

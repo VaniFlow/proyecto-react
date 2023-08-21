@@ -8,11 +8,12 @@ import Image from "next/image";
 
 const Equipo = () => {
   return (
-    <section className="px-4 py-6 mx-auto max-w-8xl sm:px-6 lg:px-48 bg-gradient-to-r from-red-300 to-red-200">
-      <div className="pb-12 text-center">
+    <section className="px-4 py-6 mx-auto h-[auto] max-w-8xl sm:px-6 sm:h-[auto] lg:px-48 lg:h-[100vh] bg-gradient-to-r from-red-300 to-red-200">
+        <h1 className="text-center font-bold mt-1 mb-0 text-3xl">Participantes</h1>
+      <div className=" pb-12 lg:pb-[7rem] text-center">
       </div>
-      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
-        <div className="mt-12 lg:mt-0 relative flex flex-col items-center text-black bg-gradient-to-r from-stone-300 to-stone-200 border-2 border-slate-500 rounded-lg max-h-screen w-90 h-[270px] hover:bg-red-300 hover:border-red-300 shadow-red-400/50 ease-in-out">
+      <div className="grid grid-cols-1 items-center gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 lg:mt-0 relative flex flex-col items-center text-black bg-gradient-to-r from-stone-300 to-stone-200 border-2 border-slate-500 rounded-lg max-h-screen w-90 h-[270px]  hover:border-red-400 shadow-red-400/50 ease-in-out">
           <div className="absolute -top-10">
             <Image
               className="w-24 h-24 rounded-full object-fit"
@@ -37,7 +38,7 @@ const Equipo = () => {
             </a>
           </div>
         </div>
-        <div className="mt-12 md:mt-12 lg:mt-0 relative flex flex-col items-center text-black bg-gradient-to-r from-stone-300 to-stone-200 border-2 border-slate-500 rounded-lg max-h-screen w-90 h-[270px] hover:bg-red-300 hover:border-red-300 shadow-red-400/50 ease-in-out">
+        <div className="mt-12 md:mt-12 lg:mt-0 relative flex flex-col items-center text-black bg-gradient-to-r from-stone-300 to-stone-200 border-2 border-slate-500 rounded-lg max-h-screen w-90 h-[270px]  hover:border-red-400 shadow-red-400/50 ease-in-out">
           <div className="absolute -top-10">
             <Image
               className="object-cover w-24 h-24 rounded-full"
@@ -62,7 +63,7 @@ const Equipo = () => {
             </a>
           </div>
         </div>
-        <div className="mt-12 md:mt-16 lg:mt-0 relative flex flex-col items-center text-black bg-gradient-to-r from-stone-300 to-stone-200 border-2 border-slate-500 rounded-lg max-h-screen w-90 h-[270px] hover:bg-red-300 hover:border-red-300 shadow-red-400/50 ease-in-out">
+        <div className="mt-12 md:mt-16 lg:mt-0 relative flex flex-col items-center text-black bg-gradient-to-r from-stone-300 to-stone-200 border-2 border-slate-500 rounded-lg max-h-screen w-90 h-[270px] hover:border-red-400 shadow-red-400/50 ease-in-out">
           <div className="absolute -top-10">
             <Image
               className="w-24 h-24 rounded-full object-fit"
@@ -87,7 +88,7 @@ const Equipo = () => {
             </a>
           </div>
         </div>
-        <div className="mt-12 md:mt-16 lg:mt-10 relative flex flex-col items-center text-black bg-gradient-to-r from-stone-300 to-stone-200 border-2 border-slate-500 rounded-lg max-h-screen w-90 h-[270px] hover:bg-red-300 hover:border-red-300 shadow-red-400/50 ease-in-out">
+        <div className="mt-12 md:mt-16 lg:mt-10 relative flex flex-col items-center text-black bg-gradient-to-r from-stone-300 to-stone-200 border-2 border-slate-500 rounded-lg max-h-screen w-90 h-[270px]  hover:border-red-400 shadow-red-400/50 ease-in-out">
           <div className="absolute -top-10">
             <Image
               className="w-24 h-24 rounded-full object-fit"
@@ -112,7 +113,7 @@ const Equipo = () => {
             </a>
           </div>
         </div>
-        <div className="mt-10 relative flex flex-col items-center text-black bg-gradient-to-r from-stone-300 to-stone-200 border-2 border-slate-500 rounded-lg max-h-screen w-90 h-[270px] hover:bg-red-300 hover:border-red-300 shadow-red-400/50 ease-in-out">
+        <div className="mt-10 relative flex flex-col items-center text-black bg-gradient-to-r from-stone-300 to-stone-200 border-2 border-slate-500 rounded-lg max-h-screen w-90 h-[270px] hover:border-red-400 shadow-red-400/50 ease-in-out">
           <div className="absolute -top-10">
             <Image
               className="w-24 h-24 rounded-full object-fit"
@@ -137,7 +138,7 @@ const Equipo = () => {
             </a>
           </div>
         </div>
-        <div className="mt-10 relative flex flex-col items-center text-black bg-gradient-to-r from-stone-300 to-stone-200 border-2 border-slate-500 rounded-lg max-h-screen w-90 h-[270px] hover:bg-red-300 hover:border-red-300 shadow-red-400/50 ease-in-out">
+        <div className="mt-10 relative flex flex-col items-center text-black bg-gradient-to-r from-stone-300 to-stone-200 border-2 border-slate-500 rounded-lg max-h-screen w-90 h-[270px]  hover:border-red-400 transition-all shadow-red-400/50 ease-in-out">
           <div className="absolute -top-10">
             <Image
               className="w-24 h-24 rounded-full object-fit"
