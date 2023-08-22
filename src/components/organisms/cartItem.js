@@ -9,6 +9,7 @@ import Modal from "@mui/material/Modal";
 import { DataContext } from "../context/dataContext";
 import { motion, AnimatePresence } from "framer-motion";
 import CartEmpty from "./cartEmpty";
+import { Toaster, toast } from 'sonner'
 
 const CartItem = ({ cart, total, openCart, setOpenCart }) => {
   const { setCart } = useContext(DataContext);
@@ -51,18 +52,26 @@ const CartItem = ({ cart, total, openCart, setOpenCart }) => {
   };
 
   const handleDeleteProduct = (itemId) => {
+
+    toast.error('Producto eliminado del carrito',{
+      duration: 1000
+    })
     const updatedCart = cart.filter((item) => item.id !== itemId);
     setCart(updatedCart);
     handleClose2();
   };
 
   const handleDeleteAllProducts = (itemId) => {
+    toast.error('Producto eliminado correctamente')
     const updatedCart = cart.filter((item) => item.id !== itemToDelete);
     setCart(updatedCart);
     handleClose3();
   };
 
   const clearCart = () => {
+    toast.error('Se vacio correctamente el carrito',{
+      duration: 1000
+    })
     const updatedCart = [];
     setCart(updatedCart);
     handleClose();

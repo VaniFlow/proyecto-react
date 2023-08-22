@@ -3,6 +3,7 @@ import FlightTakeoffOutlinedIcon from '@mui/icons-material/FlightTakeoffOutlined
 import HotelOutlinedIcon from '@mui/icons-material/HotelOutlined';
 import { useContext, useEffect, useState} from 'react';
 import { DataContext } from '../context/dataContext';
+import { Toaster, toast } from 'sonner'
 
 
 const Cards = ({card}) => {
@@ -10,6 +11,9 @@ const Cards = ({card}) => {
   const { data, cart, setCart, total, setTotal, setInCart, InCart } = useContext(DataContext);
 
   const BuyProduct = (card) => {
+    toast.success('Producto agregado al carrito',{
+      duration: 1000
+    })
     const existingCartItem = cart.find(item => item.id === card.id);
     setTotal(total)
     if (existingCartItem) {
@@ -65,10 +69,12 @@ const Cards = ({card}) => {
       </ul>
       <div className='relative bottom-0 '>
       <div className="bottom-0 left-0 flex items-center justify-between w-full ">
+      
         <button
-          onClick={(e) => BuyProduct(card)}
+          onClick={(e) => BuyProduct(card) }
           className="rounded-[10px] bg-customRed text-1em text-white text-decoration-none px-5 py-2 border-radius background-transition"
         >
+         
           Agregar a carrito
         </button>
         <a

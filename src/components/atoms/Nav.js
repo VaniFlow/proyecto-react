@@ -5,6 +5,7 @@ import { Button, Navbar } from "flowbite-react";
 import CartItem from "../organisms/cartItem";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { DataContext } from "../context/dataContext";
+import { Toaster, toast } from 'sonner'
 
 const Nav = () => {
   const { cart } = useContext(DataContext);
@@ -34,6 +35,7 @@ const Nav = () => {
 
   return (
     <>
+    <Toaster closeButton  richColors position='top-right'/>
       <Navbar
         className="bg-white/10 w-full fixed z-30 backdrop-blur"
         fluid
