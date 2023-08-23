@@ -8,8 +8,8 @@ const phoneNumber = "+541163719960";
 
 export const Footer = () => {
   const form = useRef();
-  const [alertaVisible, setAlertaVisible] = useState(false);
-  const [alertaMensaje, setAlertaMensaje] = useState("");
+  const [successAlertVisible, setSuccessAlertVisible] = useState(false);
+  const [errorAlertVisible, setErrorAlertVisible] = useState(false);
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -23,15 +23,14 @@ export const Footer = () => {
       )
       .then((response) => {
         if (response.status === 200) {
-          setAlertaMensaje(
-            "SU CORREO ELECTRÓNICO HA SIDO ENVIADO EXITOSAMENTE"
-          );
-          setAlertaVisible(true);
+          setSuccessAlertVisible(true);
+          setErrorAlertVisible(false);
+          e.target.reset();
         }
       })
       .catch((error) => {
-        setAlertaMensaje("OCURRIÓ UN ERROR AL ENVIAR EL CORREO ELECTRÓNICO");
-        setAlertaVisible(true);
+        setErrorAlertVisible(true);
+        setSuccessAlertVisible(false);
       });
   };
 
@@ -149,14 +148,25 @@ export const Footer = () => {
             </div>
           </div>
 
-          {alertaVisible && (
+          {successAlertVisible && (
             <Alert
               variant="filled"
-              severity="info"
-              onClose={() => setAlertaVisible(false)}
+              severity="success"
+              onClose={() => setSuccessAlertVisible(false)}
+              className="mt-10 text-white bg-green-400"
+            >
+              SU CORREO ELECTRÓNICO HA SIDO ENVIADO EXITOSAMENTE
+            </Alert>
+          )}
+
+          {errorAlertVisible && (
+            <Alert
+              variant="filled"
+              severity="error"
+              onClose={() => setErrorAlertVisible(false)}
               className="mt-10 text-white bg-red-400"
             >
-              {alertaMensaje}
+              OCURRIÓ UN ERROR AL ENVIAR EL CORREO ELECTRÓNICO
             </Alert>
           )}
 
