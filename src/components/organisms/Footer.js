@@ -27,6 +27,7 @@ export const Footer = () => {
             "SU CORREO ELECTRÓNICO HA SIDO ENVIADO EXITOSAMENTE"
           );
           setAlertaVisible(true);
+          e.target.reset ()
         }
       })
       .catch((error) => {
