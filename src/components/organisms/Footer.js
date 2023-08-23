@@ -1,22 +1,29 @@
-import React from "react";
 import Media from "../atoms/Media";
-
+import React, { useRef } from 'react';
 import { useState } from "react";
+import emailjs from '@emailjs/browser';
+import Alert from '@mui/material/Alert';
 
-const initialForm = {
-  email: "",
-};
-const Footer = () => {
-  const [form, setForm] = useState(initialForm);
+export const Footer = () => {
+  const form = useRef();
+  const [alertaVisible, setAlertaVisible] = useState(false);
+  const [alertaMensaje, setAlertaMensaje] = useState('');
 
-  const handleChange = (e) =>
-    setForm({
-      email: e.target.value,
-    });
-
-  const handleSubmit = (e) => {
+  const sendEmail = (e) => {
     e.preventDefault();
-  };
+
+    emailjs.sendForm('goldsandstravel', 'template_w9poc4t', form.current, 'DTaxU1Ddu-95IF7cC')
+    .then((response) => {
+      if (response.status === 200) {
+        setAlertaMensaje('SU CORREO ELECTRÓNICO HA SIDO ENVIADO EXITOSAMENTE');
+        setAlertaVisible(true);
+      }
+    })
+    .catch((error) => {
+      setAlertaMensaje('OCURRIÓ UN ERROR AL ENVIAR EL CORREO ELECTRÓNICO');
+      setAlertaVisible(true);
+    });
+};
 
   return (
     <section id="footer">
@@ -108,13 +115,13 @@ const Footer = () => {
                 Recibí todas las novedades
               </h4>
 
-              <form onSubmit={handleSubmit} className="relative inset-y-0 right-0 mt-2 rounded-md shadow-sm sm:w-9/12 sm:ml-0 lg:my-auto">
+              <form ref={form} onSubmit={sendEmail} className="relative inset-y-0 right-0 mt-2 rounded-md shadow-sm sm:w-9/12 sm:ml-0 lg:my-auto">
                 <div className="flex items-center px-2 py-2 bg-red-200 rounded-lg">
                   <input
                     className="w-full px-2 py-1 mr-6 leading-tight text-gray-700 bg-white border-none rounded-lg appearance-none ring ring-red-300 hover:ring-slate-300"
-                    type="text"
-                    placeholder="Tu e-mail" onChange={handleChange} value={form.email}
-                    aria-label="Full mail"></input>
+                    type="email"
+                    placeholder="Tu e-mail" 
+                    name="user_email"></input>
                   <input 
                     className="px-2 py-1 text-sm italic text-white bg-red-300 border-2 border-red-300 rounded-lg shadow-lg hover:bg-red-300 hover:border-red-300 shadow-red-400/50 hover:not-italic h-7"
                     type="submit" value="Suscribirme"></input>
@@ -123,6 +130,13 @@ const Footer = () => {
             </div>
           </div>
         </div>
+
+        {alertaVisible && (
+        <Alert variant="filled" severity="info" onClose={() => setAlertaVisible(false)}
+          className="mt-10 text-white bg-red-400">
+          {alertaMensaje}
+        </Alert>
+      )}
 
         <div className="h-12 pt-12 mt-12 border-t border-gray-100 dark:border-gray-800">
           <div className="flex justify-center">
