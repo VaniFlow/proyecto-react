@@ -7,6 +7,7 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { DataContext } from "../context/dataContext";
 import { Toaster, toast } from 'sonner'
 
+
 const Nav = () => {
   const { cart } = useContext(DataContext);
   const [openCart, setOpenCart] = useState(false);
