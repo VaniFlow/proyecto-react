@@ -3,6 +3,7 @@ import Media from "../atoms/Media";
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
 import Alert from "@mui/material/Alert";
+import { toast } from "sonner";
 
 const phoneNumber = "+541163719960";
 
@@ -23,7 +24,7 @@ export const Footer = () => {
       )
       .then((response) => {
         if (response.status === 200) {
-          setSuccessAlertVisible(true);
+          toast.success("Email enviado correctamente")
           setErrorAlertVisible(false);
           e.target.reset();
         }
