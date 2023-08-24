@@ -6,6 +6,8 @@ import CartItem from "../organisms/cartItem";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { DataContext } from "../context/dataContext";
 import { Toaster, toast } from 'sonner'
+import Image from "next/image";
+import logonaranja from "../../../public/images/logo-naranja3.png"
 
 const Nav = () => {
   const { cart } = useContext(DataContext);
@@ -43,7 +45,7 @@ const Nav = () => {
       >
         <Navbar.Brand href="/#">
           <img
-            src="https://i.postimg.cc/kgT9tpds/Gold-Sands-Tours.png"
+            src={logonaranja}
             border="0"
             alt="Gold-Sands-Tours"
             className="h-[60px]"

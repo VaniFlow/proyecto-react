@@ -16,8 +16,8 @@ const Equipo = () => {
         <h1 className="text-center font-bold mt-1 mb-0 text-3xl">Participantes</h1>
       <div className=" pb-12 lg:pb-[7rem] text-center">
       </div>
-      <div className="grid grid-cols-1 items-center gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 border-4">
-        <div className="mt-12 lg:mt-0 relative flex flex-col items-center text-black bg-gradient-to-r from-stone-300 to-stone-200 border-2 border-slate-500 rounded-lg max-h-screen w-90 h-[270px]  hover:border-red-400 shadow-red-400/50 ease-in-out">
+      <div className="grid grid-cols-1 items-center gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 lg:mt-0 relative flex flex-col items-center text-black bg-gradient-to-r from-stone-300 to-stone-200 border-2 rounded-lg max-h-screen w-90 h-[270px]  hover:border-red-400 shadow-red-400/50 ease-in-out">
           <div className="absolute -top-10">
             <Image
               className="w-24 h-24 rounded-full object-fit"
