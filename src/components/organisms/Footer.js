@@ -3,7 +3,7 @@ import Media from "../atoms/Media";
 import Swal from "sweetalert2";
 import { useState } from "react";
 
-const phoneNumber = "+541163719960";
+const phoneNumber = "+541112345678";
 
 const Footer = () => {
   const [form, setForm] = useState("");
