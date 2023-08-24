@@ -74,7 +74,7 @@ const Cards = ({card}) => {
           onClick={(e) => BuyProduct(card) }
           className="rounded-[10px] bg-customRed text-1em text-white text-decoration-none px-5 py-2 border-radius background-transition"
         >
-         
+        
           Agregar a carrito
         </button>
         <a

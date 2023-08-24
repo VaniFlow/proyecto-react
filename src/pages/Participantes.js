@@ -19,6 +19,8 @@ const Participantes = () => {
     <div>
         <Equipo/>  
     </div>
+
+
   
   </>
 )}
