@@ -35,7 +35,7 @@ const Cards = ({card}) => {
 
   return (
     <>
-     <div className="relative w-80 h-[450px] rounded-[10px] overflow-hidden  mb-[5px] text-left">
+    <div className="relative w-80 h-[450px] rounded-[10px] overflow-hidden  mb-[5px] text-left">
   <div className="opacity-80">
   <div className="bg-black opacity-40 w-full h-full absolute z-[10]"></div>
   <img

@@ -178,22 +178,23 @@ const Equipo = () => {
 
 
       <div className="card-container h-[450px] w-[320px] rounded-[10px]">
-        <div className="w-full h-[70%] rounded-t-[10px] relative shadow-xl">
-            <h2 className=" text-xl  font-bold lg:ml-2 lg:text-center absolute z-10 bottom-0 ">
-              Andrea Aguirre
+        <div className="w-full h-[70%] rounded-t-[10px] relative">
+        <div className="bg-black opacity-20 w-full h-full absolute z-[10] rounded-t-[10px]"></div>
+            <h2 className=" text-xl  font-bold lg:ml-2 lg:text-center absolute z-10 bottom-3 ">
+              Guido Aquino
             </h2>
         <Image
               className="w-full h-full  object-fit absolute rounded-t-[10px]"
-              src={andre}
+              src={guido}
               alt="Andrea"
             />
         </div>
 
-        <div className="w-full h-[30%] bg-blue-300 rounded-b-[10px] text-center">
-          <div className="w-full h-[70%] border-4 border-red-500">
+        <div className="w-full h-[30%] bg-blue-800 rounded-[10px] text-center px-3 mt-[-10px] z-50 relative " >
+          <div className="w-full h-[65%] rounded-t-[10px] pt-3">
           <span>Estudiante de Desarrollo web en Academia Numen</span>
           </div>
-          <div className="flex flex-row space-x-4  justify-center border-4 border-red-500 h-[30%]">
+          <div className="flex flex-row space-x-4 items-center justify-center h-[35%] border-t-[2px] border-white">
             <a href="https://www.linkedin.com/in/andrea-aguirre-317284288/" target="_blank" rel="noopener noreferrer">
               <LinkedInIcon className="transition ease-in-out hover:opacity-75 text-white" fontSize="large"  />
             </a>

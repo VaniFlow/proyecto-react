@@ -9,6 +9,7 @@ import { Toaster, toast } from 'sonner'
 import Image from "next/image";
 import logonaranja from "../../../public/images/logo-naranja3.png"
 
+
 const Nav = () => {
   const { cart } = useContext(DataContext);
   const [openCart, setOpenCart] = useState(false);
@@ -39,23 +40,23 @@ const Nav = () => {
     <>
     <Toaster closeButton  richColors position='top-right'/>
       <Navbar
-        className="bg-white/10 w-full fixed z-30 backdrop-blur"
-        fluid
-        rounded
+        className="bg-[#5AC9E4] w-[100%] fixed z-30 backdrop-blur p-[5px] "
+       
+         fluid
       >
-        <Navbar.Brand href="/#">
-          <img
+        <Navbar.Brand href="/#" >
+          <Image
             src={logonaranja}
             border="0"
             alt="Gold-Sands-Tours"
-            className="h-[60px]"
+            className=" ml-[5%] logogst"
           />
         </Navbar.Brand>
-        <div className="flex gap-3 md:order-2">
+        <div className="flex gap-3 md:order-2   ">
           <div className="d-block">
-            <button
+            <button 
               onClick={handleClick}
-              className="bg-red-400 hover:bg-red-200 rounded-[10px] p-[7px] text-white hover:text-red-400"
+              className=" bg-red-400 hover:bg-red-200 rounded-[10px] p-[7px] text-white btn-carrito " 
             >
               <ShoppingCartIcon style={{ transform: "scale(1.3)" }} />{" "}
               <span>{totalCartItems}</span>
@@ -69,37 +70,36 @@ const Nav = () => {
                   setOpenCart={setOpenCart}
                   total={formattedTotal}
                 />
-                <div className="flex flex-col"></div>
+                <div className="flex flex-col "></div>
               </div>
             )}
           </div>
 
-          <Navbar.Toggle className="bg-transparent border-none" />
+          <Navbar.Toggle className='bg-transparent  border-none  ' />
         </div>
-        <Navbar.Collapse className="bg-transparent ">
-          <Navbar.Link className="bg-transparent " active href="#inicio">
-            <p className="text-[20px] text-white">Inicio</p>
-          </Navbar.Link>
-          <Navbar.Link className="bg-transparent" active href="#destinos">
-            <p className="text-[20px] text-white">Destinos</p>
-          </Navbar.Link>
-          <Navbar.Link className="bg-transparent" active href="#about">
-            <p className="text-[20px] text-white">Sobre Nosotros</p>
-          </Navbar.Link>
-          <Navbar.Link className="bg-transparent" active href="#footer">
-            <p className="text-[20px] text-white">Contacto</p>
-          </Navbar.Link>
+        <Navbar.Collapse className="bg-transparent  ">
+          
+            <ul className=" flex flex-row text-white text-[20px] menu-mobile" >
+              <a href="/#"  className="p-[10px] link-mobile ">Inicio</a>
+              <a href="/#destinos" className="p-[10px] link-mobile" >Destinos</a>
+              <a href="/#about" className="p-[10px] link-mobile">Sobre Nosotros</a>
+              <a href="/#proveedores" className="p-[10px] link-mobile">Proveedores</a>
+              <a href="/#footer" className="p-[10px] link-mobile">Contacto</a>
+              <a href="/Participantes" className="p-[10px] link-mobile">Parcipantes</a>
+            </ul>
+       
+          
 
           {/* Enlace utilizando Link de next/link */}
          
-            <Link href="/Participantes">
-              <h1 className="text-[20px] text-white">Participantes</h1>
-            </Link>
+          
          
         </Navbar.Collapse>
       </Navbar>
     </>
   );
 };
+
+
 
 export default Nav;
