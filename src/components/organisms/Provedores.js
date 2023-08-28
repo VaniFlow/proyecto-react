@@ -8,12 +8,13 @@ import HotelOutlinedIcon from '@mui/icons-material/HotelOutlined';
 
 const Proveedores = () => {
   return (
+    <section id="proveedores h-[50vh]">
     <div 
     id="provedores"
-    className="font-bold  p-4 bg-gradient-to-b  from-[#F9A1A1] to-red-400 dark:bg-gray-900"
+    className="font-bold h-auto flex items-center  bg-gradient-to-b from-[#03c3ec] to-red-200"
 >
 
-      <section className="pb-32 pt-24 pr-[6rem] pl-[6rem] text-center">
+      <section className="pb-[2%] pt-[3%] pr-[6rem] pl-[6rem] text-center">
         <h2 className="mb-16 text-3xl font-bold">
           Nuestros Proveedores
         </h2>
@@ -52,7 +53,7 @@ const Proveedores = () => {
   </section>
   
 </div>
-
+</section>
   )
 }
 
