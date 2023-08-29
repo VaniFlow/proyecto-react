@@ -40,7 +40,7 @@ const Nav = () => {
     <>
     <Toaster closeButton  richColors position='top-right'/>
       <Navbar
-        className="bg-[#5AC9E4] w-[100%] fixed z-30 backdrop-blur p-[5px] "
+        className="bg-white/20 w-[100%] fixed z-30 backdrop-blur p-[5px] "
        
          fluid
       >
@@ -79,7 +79,7 @@ const Nav = () => {
         </div>
         <Navbar.Collapse className="bg-transparent  ">
           
-            <ul className=" flex flex-row text-white text-[20px] menu-mobile" >
+            <ul className=" flex flex-row text-white font-bold text-[20px] menu-mobile" >
               <a href="/#"  className="p-[10px] link-mobile ">Inicio</a>
               <a href="/#destinos" className="p-[10px] link-mobile" >Destinos</a>
               <a href="/#about" className="p-[10px] link-mobile">Sobre Nosotros</a>

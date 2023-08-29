@@ -8,9 +8,9 @@ import HotelOutlinedIcon from '@mui/icons-material/HotelOutlined';
 
 const Proveedores = () => {
   return (
-    <section id="proveedores h-[50vh]">
+    <section id="proveedores" classname="h-[50vh]">
     <div 
-    id="provedores"
+   
     className="font-bold h-auto flex items-center  bg-gradient-to-b from-[#03c3ec] to-red-200"
 >
 
