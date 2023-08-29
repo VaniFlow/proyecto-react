@@ -13,10 +13,10 @@ import Link from 'next/link';
 
 const Equipo = () => {
   return (
-    <section className=" h-[200vh] w-full p-6 bg-gradient-to-b from-[#03c3ec] to-red-200">
+    <section className=" h-auto w-full p-6 bg-gradient-to-b from-[#03c3ec] to-red-200">
         <h1 className="text-center font-bold  mb-0 text-3xl mb-[50px">Participantes</h1>
      
-       <div className="grid grid-cols-1 items-center gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 mt-[100px] mb-[200px]"> 
+       <div className="grid grid-cols-1 items-center gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 mt-[100px] mb-[100px]"> 
        <div className="mt-12 md:mt-12 lg:mt-0 relative flex flex-col items-center text-black bg-gradient-to-r from-stone-300 to-stone-200 border-2 border-slate-500 rounded-lg max-h-screen w-90 h-[270px]  hover:border-red-400 shadow-red-400/50 ease-in-out">
           <div className="absolute -top-10">
             <Image
@@ -172,7 +172,7 @@ const Equipo = () => {
 
        </div> 
 
-      <div className="flex flex-row justify-center items-center w-[80%] m-auto gap-5">
+      {/* <div className="flex flex-row justify-center items-center w-[80%] m-auto gap-5">
       <div className="card-container h-[450px] w-[320px] rounded-[10px] ">
         <div className="w-full h-[70%] rounded-t-[10px] relative">
         <div className="bg-black opacity-20 w-full h-full absolute z-[10] rounded-t-[10px]"></div>
@@ -343,13 +343,13 @@ const Equipo = () => {
       </div>
       
       
-      </div>
+      </div> */}
       
 
 
 
         {/* Boton de volver al inicio */}
-        <div className="w-full flex justify-center mt-[10px]">
+        <div className="w-full flex justify-center ">
           <a 
             href="/"
             className='rounded-[10px] bg-customRed text-1em text-white hover:bg-red-400 text-decoration-none px-5 py-2 border-radius background-transition shadow-md'>
