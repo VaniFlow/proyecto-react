@@ -16,9 +16,6 @@ export default function Home() {
     window.scrollTo({
       top: 0,
       behavior: "smooth",
-    
-      
-      
     });
   };
 
@@ -59,7 +56,9 @@ export default function Home() {
 
       {showButton && (
         <button
-          className="scale-[1.2] fixed bottom-0 right-0 bg-blue-400 m-1 rounded-[2px]"
+
+          className="scale-[1.2] fixed bottom-0 right-0 bg-blue-400 m-1 rounded-[2px]  "
+
           onClick={subirpagina}
         >
           <KeyboardArrowUpIcon />
