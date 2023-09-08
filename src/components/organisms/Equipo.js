@@ -131,7 +131,7 @@ const Equipo = () => {
               Guido Aquino
             </h2>
             <p className="mt-2 text-center">
-              Estudiante de Desarrollo Web en Academia Numen.
+              Estudiante de Desarrollo Web en Academia Numen y etc.
             </p>
           </div>
           <div className="flex flex-row space-x-4 mt-11 lg:mt-4">
